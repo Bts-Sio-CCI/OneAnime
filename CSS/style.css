@@ -1,0 +1,74 @@
+.navbar {
+  overflow: hidden;
+  background-color: #272525;
+  font-family: Arial;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+}
+
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  background-color: #594F4F;
+  color: rgb(255, 255, 255);
+  border-radius: 8%;
+  /* height: 10vh; */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #594F4F;
+  min-width: 160px;
+  width: 90vw;
+  height: 80vh;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 1%;
+}
+
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #594F4F;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.img_Berserk {
+  border-radius: 2%;
+  width: 15vw;
+  height: 35vh;
+  text-align: center;
+}
