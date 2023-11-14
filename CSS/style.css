@@ -43,8 +43,8 @@ nav a:hover {
 
 }
 
-#logo1 {
-  width  : 5vw;
+#triangle-logo {
+  width: 7vw;
   height : 10vh;
   border-left  : 25px solid transparent;
   border-right : 25px solid transparent;
