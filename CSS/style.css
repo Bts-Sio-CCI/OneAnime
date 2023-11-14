@@ -23,15 +23,17 @@ nav li::after {
 nav {
   height: 5vh;
   margin: 0 auto;
+  width: 100vw;
 }
 
 nav a {
-  width: 11vw;
+  width: 9.22vw;
   display: block;
   text-decoration: none;
   color: black;
   background-color: #272525;
   height: 5vh;
+  padding: 1vw;
 }
 
 nav a:hover {
