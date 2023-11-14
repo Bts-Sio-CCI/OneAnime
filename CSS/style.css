@@ -10,7 +10,7 @@ nav ul{
 
 nav li{
   float: left;
-  width: 14vw;
+  width: auto;
   text-align: center;
 }
 
@@ -42,8 +42,8 @@ nav a:hover {
 }
 
 #logo1 {
-  width  : 0;
-  height : 0;
+  width  : 5vw;
+  height : 10vh;
   border-left  : 25px solid transparent;
   border-right : 25px solid transparent;
   border-top   : 50px solid #594F4F;
