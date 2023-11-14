@@ -11,8 +11,6 @@ nav ul{
 nav li{
   float: left;
   width: 14vw;
-
-  
   text-align: center;
 }
 
@@ -22,9 +20,35 @@ nav li::after {
   clear: both;
 }
 
-.img_Berserk {
-  border-radius: 2%;
-  width: 15vw;
-  height: 35vh;
-  text-align: center;
+nav {
+  height: 5vh;
+  margin: 0 auto;
+}
+
+nav a {
+  width: 11vw;
+  display: block;
+  text-decoration: none;
+  color: black;
+  background-color: #272525;
+  height: 5vh;
+}
+
+nav a:hover {
+  color: white;
+  border-bottom: 2px solid #594F4F;
+  background-color: #594F4F;
+
+}
+
+#logo1 {
+  width  : 0;
+  height : 0;
+  border-left  : 25px solid transparent;
+  border-right : 25px solid transparent;
+  border-top   : 50px solid #594F4F;
+}
+
+#logo1:hover {
+  background-color: #272525;
 }
