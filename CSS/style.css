@@ -43,12 +43,13 @@ nav a:hover {
 
 }
 
-#triangle-logo {
-  width: 7vw;
-  height : 10vh;
-  border-left  : 25px solid transparent;
-  border-right : 25px solid transparent;
-  border-top   : 50px solid #594F4F;
+#logo1 {
+  display : inline-block;
+  height : 0;
+  width : 0;
+  border-top : 130px solid #594F4F;
+  border-right : 75px solid transparent;
+  border-left : 75px solid transparent;
 }
 
 .logo-li {
