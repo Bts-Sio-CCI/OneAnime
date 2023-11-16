@@ -1,24 +1,33 @@
-
-.topbar-center-logo {
-  background: #2c3840;
+ul>li {
+  display: inline-block;
+  display: inline;
 }
 
-.topbar-center-logo .menu {
-  background: #2c3840;
+ul {
+  text-align: center
 }
 
-.topbar-center-logo .menu a {
-  color: #fefefe;
+.left-navbar {
+  float: left
 }
 
-.top-bar-center {
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+.right-navbar {
+  float: right
 }
 
-@media screen and (max-width: 39.9375em) {
-  .topbar-center-logo .top-bar-center {
-    display: none;
-  }
+#triangle-logo {
+  margin-left: auto;
+  margin-right: auto;
+  display : inline-block;
+  height : 0;
+  width : 0;
+  border-top : 122px solid #594F4F;
+  border-right : 73px solid transparent;
+  border-left : 73px solid transparent;
+  background-color: #272525;
+}
+
+.logo-li {
+  width: 5vw;
+  background-color: red;
 }
