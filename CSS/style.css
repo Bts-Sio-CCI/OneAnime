@@ -61,20 +61,12 @@
 
 }
 
-
-
 .nav-button li ul li a:hover {
   background-color: #594F4F;
 }
 
 .nav-button a:hover {
   color: rgb(255, 255, 255);
-}
-
-
-.logo-li {
-  background-color: #594F4F;
-  
 }
 
 .test_img {
