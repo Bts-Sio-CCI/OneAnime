@@ -13,20 +13,19 @@ body {
 }
 
 .nav-button {
-  padding-left: 0.3vw;
   position: absolute;
   
 }
 
 .nav-button li {
   height: auto;
-  width: 215.8px;
+  width: 170px;
   float: left;
   text-align: center;
   list-style: none;
   font: normal bold 13px/1em Arial, Verdana, Helvetica;
   padding: 0;
-
+  margin-left: 1.7vw;
   background-color: #D9D9D9;
   border-radius: 1em;
 }
