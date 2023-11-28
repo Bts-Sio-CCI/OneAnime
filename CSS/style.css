@@ -25,7 +25,7 @@ body {
   list-style: none;
   font: normal bold 13px/1em Arial, Verdana, Helvetica;
   padding: 0;
-  margin-left: 1.7vw;
+  margin-left: 2vw;
   background-color: #D9D9D9;
   border-radius: 1em;
 }
@@ -58,7 +58,7 @@ body {
   width: 50vw;
   border-radius: 0em;
   padding: 1wv;
-
+  z-index: 10;
 }
 
 .nav-button li ul li a:hover {
