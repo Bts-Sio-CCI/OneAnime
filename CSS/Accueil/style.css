@@ -10,7 +10,7 @@
 #main-container {
 	display:flex;
     width: 100%;
-    background: linear-gradient(#D9D9D9, #f0ebeb);
+    background: linear-gradient(#D9D9D9, #C4C4C4);
 }
 
 .menu {
@@ -71,10 +71,32 @@ li span:nth-child(2) {
 .logo {
   width: 1.5vw;
   filter: grayscale(50%);
+  height: 3vh;
 }
 
 .titre {
   font-weight: bold;
   font-size: 1.5em;
   font-family: 'Nova Square', sans-serif;
+}
+
+.onglet-titre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 1vw;
+}
+
+.onglet-forum {
+    position: absolute;
+    bottom: 7vh;
+    left: 0;
+    right: 1vw;
+}
+
+.onglet-settings {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 1vw;
 }
