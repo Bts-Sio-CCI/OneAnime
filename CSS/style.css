@@ -25,7 +25,7 @@ body {
   list-style: none;
   font: normal bold 13px/1em Arial, Verdana, Helvetica;
   padding: 0;
-
+  margin-left: 2vw;
   background-color: #D9D9D9;
   border-radius: 1em;
 }
@@ -55,7 +55,7 @@ body {
 
 .nav-button li ul li {
   background-color: #594F4F;
-  width: 215.8px;
+  width: 50vw;
   border-radius: 0em;
   padding: 1wv;
 
@@ -72,5 +72,3 @@ body {
 .test_img {
   width: 10vw;
 }
-
-
