@@ -9,7 +9,7 @@
 #main-container {
 	display:flex;
     width: 100%;
-    background: linear-gradient(#D9D9D9, rgb(211, 190, 190)0, 0));
+    background: linear-gradient(#D9D9D9, #f0ebeb);
 }
 
 .menu {
@@ -39,21 +39,20 @@ a {
     font-family: 'calibri';
 }
 
-.nav-button li:hover ul {
-  display: block;
-  padding-bottom: 10vw;
+.material-symbols-outlined {
+    font-size: 25px;
+    margin-right: 10px;
+    background: #0c0c0c;
+    border-radius: 50%;
+    padding: 10px;
 }
 
-.nav-button li ul li {
-  background-color: #594F4F;
-  width: 50vw;
-  border-radius: 0em;
-  padding: 1wv;
-
+li:hover {
+    background: #0c0c0c;
 }
 
-.nav-button li ul li a:hover {
-  background-color: #594F4F;
+li span:nth-child(2) {
+    display: none;
 }
 
 .menu:hover {
@@ -62,4 +61,9 @@ a {
 
 .menu:hover li span:nth-child(2) {
     display: block;
+    text-indent: 1vw;
+}
+
+.logo {
+  width: 3vw;
 }
