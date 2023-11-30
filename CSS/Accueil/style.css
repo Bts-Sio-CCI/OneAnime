@@ -80,9 +80,9 @@ li span:nth-child(2) {
   font-family: 'Nova Square', sans-serif;
 }
 
-.onglet-titre {
+.onglet-panier {
     position: absolute;
-    top: 0;
+    bottom: 18vh;
     left: 0;
     right: 1vw;
 }

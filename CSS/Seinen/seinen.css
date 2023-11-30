@@ -80,10 +80,6 @@ li span:nth-child(2) {
   font-family: 'Nova Square', sans-serif;
 }
 
-.onglet-titre {
-    float: top;
-}
-
 .onglet-forum {
     position: absolute;
     bottom: 7vh;
