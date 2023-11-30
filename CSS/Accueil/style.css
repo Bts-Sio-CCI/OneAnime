@@ -9,7 +9,6 @@
 
 #main-container {
 	display:flex;
-    width: 100%;
     background: linear-gradient(#D9D9D9, #C4C4C4);
 }
 
@@ -89,7 +88,7 @@ li span:nth-child(2) {
 
 .onglet-forum {
     position: absolute;
-    bottom: 7vh;
+    bottom: 9vh;
     left: 0;
     right: 1vw;
 }
@@ -99,4 +98,15 @@ li span:nth-child(2) {
     bottom: 0;
     left: 0;
     right: 1vw;
+}
+
+
+.grid-body-actu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actu-box-1 {
+    background-color: red;
 }

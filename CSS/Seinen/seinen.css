@@ -9,7 +9,7 @@
 
 #main-container {
 	display:flex;
-    width: 100%;
+    width: 17%;
     background: linear-gradient(#D9D9D9, #f0ebeb);
 }
 
@@ -80,9 +80,16 @@ li span:nth-child(2) {
   font-family: 'Nova Square', sans-serif;
 }
 
+.onglet-panier {
+    position: absolute;
+    bottom: 18vh;
+    left: 0;
+    right: 1vw;
+}
+
 .onglet-forum {
     position: absolute;
-    bottom: 7vh;
+    bottom: 9vh;
     left: 0;
     right: 1vw;
 }
@@ -94,3 +101,12 @@ li span:nth-child(2) {
     right: 1vw;
 }
 
+.seinen-manga {
+    display: grid;
+    background: #272525;
+    box-shadow: 8px 0px 9px 0px #594F4F;
+}
+
+.Berserk{
+    
+}
