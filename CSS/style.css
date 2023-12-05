@@ -63,3 +63,7 @@ li span:nth-child(2) {
 .menu:hover li span:nth-child(2) {
     display: block;
 }
+
+.div.search-div{
+    background: #272525;
+}
