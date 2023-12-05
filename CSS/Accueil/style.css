@@ -122,7 +122,7 @@ li span:nth-child(2) {
 
 .grid-body-actu{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: 100vh;
 }
@@ -134,4 +134,8 @@ li span:nth-child(2) {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.div-search{
+    background-color: #272525;
 }
