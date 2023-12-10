@@ -1,1 +1,1 @@
-import './calendar.js';
+require('./calendar.js');
