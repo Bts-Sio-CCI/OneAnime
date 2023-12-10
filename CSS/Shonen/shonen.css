@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 
-    * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,8 +12,7 @@
     top: 0;
     left: 0;
     display: flex;
-    background: linear-gradient(#D9D9D9, #C4C4C4);
-    z-index: 2;
+
 }
 
 .menu {
@@ -33,7 +32,7 @@
     transition: .3s;
     margin-bottom: 20px;
     padding-left: 20px;
-    
+
 }
 
 a {
@@ -72,15 +71,15 @@ li span:nth-child(2) {
 }
 
 .logo {
-  width: 1.5vw;
-  filter: grayscale(50%);
-  height: 3vh;
+    width: 1.5vw;
+    filter: grayscale(50%);
+    height: 3vh;
 }
 
 .titre {
-  font-weight: bold;
-  font-size: 1.5em;
-  font-family: 'Nova Square', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'Nova Square', sans-serif;
 }
 
 .onglet-panier {
@@ -104,7 +103,7 @@ li span:nth-child(2) {
     right: 1vw;
 }
 
-.div-search{
+.div-search {
     background-color: #272525;
     margin-left: 25%;
     width: 50%;
@@ -122,15 +121,14 @@ li span:nth-child(2) {
     border: 5px solid #272525;
 }
 
-.barre{
+.barre {
     display: flex;
 }
 
-#search-button{
+#search-button {
     width: 9.45%;
     height: 100%;
     padding-top: 2px;
     border: 5px solid #272525;
     cursor: pointer;
 }
-

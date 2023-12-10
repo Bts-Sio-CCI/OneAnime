@@ -136,33 +136,3 @@ li span:nth-child(2) {
     justify-content: space-around;
     align-items: center;
 }
-
-.div-search{
-    background-color: #272525;
-    margin-left: 25%;
-    width: 50%;
-    text-align: center;
-    border: 15px solid #272525;
-    border-radius: 0.8em;
-    box-sizing: border-box;
-}
-
-#search-bar {
-    padding: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
-    width: 90%;
-    border: 5px solid #272525;
-}
-
-.barre{
-    display: flex;
-}
-
-#search-button{
-    width: 9.45%;
-    height: 100%;
-    padding-top: 2px;
-    border: 5px solid #272525;
-    cursor: pointer;
-}
