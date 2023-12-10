@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 
-* {
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,11 +12,10 @@
     top: 0;
     left: 0;
     display: flex;
-
+    z-index: 2;
 }
 
 .menu {
-    height: 100%;
     transition: .3s;
     background: #272525;
     padding: 20px 20px 20px 0;
@@ -32,7 +31,7 @@
     transition: .3s;
     margin-bottom: 20px;
     padding-left: 20px;
-
+    
 }
 
 a {
@@ -71,15 +70,15 @@ li span:nth-child(2) {
 }
 
 .logo {
-    width: 1.5vw;
-    filter: grayscale(50%);
-    height: 3vh;
+  width: 1.5vw;
+  filter: grayscale(50%);
+  height: 3vh;
 }
 
 .titre {
-    font-weight: bold;
-    font-size: 1.5em;
-    font-family: 'Nova Square', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: 'Nova Square', sans-serif;
 }
 
 .onglet-panier {
@@ -103,7 +102,7 @@ li span:nth-child(2) {
     right: 1vw;
 }
 
-.div-search {
+.div-search{
     background-color: #272525;
     margin-left: 25%;
     width: 50%;
@@ -117,18 +116,50 @@ li span:nth-child(2) {
     padding: 8px;
     font-size: 16px;
     box-sizing: border-box;
-    width: 90%;
+    width: 94%;
     border: 5px solid #272525;
+    border-radius: 0.8em;
 }
 
-.barre {
+.barre{
+    padding-top: 1%;
     display: flex;
+    background: #535353;
 }
 
-#search-button {
-    width: 9.45%;
+.search-button{
+    width: 5%;
     height: 100%;
     padding-top: 2px;
+    background: #272525;
     border: 5px solid #272525;
+    border-radius: 0.8em;
     cursor: pointer;
+}
+
+.search-button:hover{
+    background: #0c0c0c;
+}
+
+.liste-manga {
+    display: flex;
+    background: #535353;
+    columns: 5;
+    padding-right: 2%;
+    padding-bottom: 2.3%;
+}
+
+.shonen-manga{
+    background-color: #272525;
+    margin-top: 3vh;
+    margin-left: 7%;
+    width: 13%;
+    text-align: center;
+    border: 15px solid #272525;
+    border-radius: 0.8em;
+}
+
+.size-image{
+    width: 210px;
+    height:328px;
 }

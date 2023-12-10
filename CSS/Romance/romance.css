@@ -12,12 +12,10 @@
     top: 0;
     left: 0;
     display: flex;
-    background: linear-gradient(#D9D9D9, #C4C4C4);
     z-index: 2;
 }
 
 .menu {
-    height: 100%;
     transition: .3s;
     background: #272525;
     padding: 20px 20px 20px 0;
@@ -104,7 +102,6 @@ li span:nth-child(2) {
     right: 1vw;
 }
 
-
 .div-search{
     background-color: #272525;
     margin-left: 25%;
@@ -119,19 +116,44 @@ li span:nth-child(2) {
     padding: 8px;
     font-size: 16px;
     box-sizing: border-box;
-    width: 90%;
+    width: 94%;
     border: 5px solid #272525;
 }
 
 .barre{
     display: flex;
+    background: #535353;
 }
 
-#search-button{
-    width: 9.45%;
+.search-button{
+    width: 5%;
     height: 100%;
     padding-top: 2px;
+    background: #272525;
     border: 5px solid #272525;
+    border-radius: 0.8em;
     cursor: pointer;
+}
+
+.search-button:hover{
+    background: #0c0c0c;
+}
+
+.liste-manga {
+    display: flex;
+    background: #535353;
+    columns: 5;
+    padding-right: 2%;
+    padding-bottom: 5vh;
+}
+
+.romance-manga{
+    background-color: #272525;
+    margin-top: 3vh;
+    margin-left: 7%;
+    width: 13%;
+    text-align: center;
+    border: 15px solid #272525;
+    border-radius: 0.8em;
 }
 
