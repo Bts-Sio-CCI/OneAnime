@@ -118,11 +118,9 @@ li span:nth-child(2) {
     box-sizing: border-box;
     width: 94%;
     border: 5px solid #272525;
-    border-radius: 0.8em;
 }
 
 .barre{
-    padding-top: 1%;
     display: flex;
     background: #535353;
 }
@@ -146,10 +144,10 @@ li span:nth-child(2) {
     background: #535353;
     columns: 5;
     padding-right: 2%;
-    padding-bottom: 2.3%;
+    padding-bottom: 5vh;
 }
 
-.seinen-manga{
+.romance-manga{
     background-color: #272525;
     margin-top: 3vh;
     margin-left: 7%;
@@ -159,12 +157,3 @@ li span:nth-child(2) {
     border-radius: 0.8em;
 }
 
-.size-image{
-    width: 210px;
-    height:328px;
-}
-
-.search-button-class {
-    background-color: transparent;
-    color: white;
-}
