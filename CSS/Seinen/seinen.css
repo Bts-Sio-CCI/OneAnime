@@ -7,10 +7,6 @@
     box-sizing: border-box;
 }
 
-#main-container {
-	display:flex;
-    background: linear-gradient(#D9D9D9, #f0ebeb);
-}
 
 .menu {
     height: 100%;
