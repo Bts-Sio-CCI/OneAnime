@@ -9,7 +9,7 @@
     --calendar-today-color: linear-gradient(to bottom, #03a9f4, #2196f3);
     --calendar-today-innerborder-color: transparent;
     --calendar-nextprev-bg-color: transparent;
-    --next-prev-arrow-color : #FFF;
+    --next-prev-arrow-color: #FFF;
     --calendar-border-radius: 16px;
     --calendar-prevnext-date-color: #484848
 }
@@ -27,7 +27,7 @@
     border-radius: var(--calendar-border-radius);
     height: auto;
     width: auto;
-    
+
 }
 
 .calendar-inner {
@@ -141,7 +141,7 @@
 }
 
 .calendar .calendar-inner .calendar-controls .calendar-next a svg path,
-.calendar .calendar-inner .calendar-controls .calendar-prev a svg path{
+.calendar .calendar-inner .calendar-controls .calendar-prev a svg path {
     fill: var(--next-prev-arrow-color);
 }
 
@@ -152,6 +152,6 @@
 
 .calendar .calendar-inner .calendar-body .prev-dates:hover,
 .calendar .calendar-inner .calendar-body .next-dates:hover {
-  border: 1px solid transparent;
-  pointer-events: none;
+    border: 1px solid transparent;
+    pointer-events: none;
 }
