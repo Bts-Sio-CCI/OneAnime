@@ -141,15 +141,23 @@ li span:nth-child(2) {
     background: #0c0c0c;
 }
 
+.size-image{
+    width: 210px;
+    height:328px;
+    border-radius: 0.8em;
+}
+
 .liste-manga {
     display: flex;
     background: #535353;
     columns: 5;
     padding-right: 2%;
     padding-bottom: 2.3%;
+    z-index: 1;
 }
 
 .manga{
+    position: relative;
     background-color: #272525;
     margin-top: 3vh;
     margin-left: 7%;
@@ -157,9 +165,32 @@ li span:nth-child(2) {
     text-align: center;
     border: 15px solid #272525;
     border-radius: 0.8em;
+    overflow: hidden;
 }
 
-.size-image{
-    width: 210px;
-    height:328px;
+.manga:hover{
+    background: #0c0c0c;
+    border: 15px solid #0c0c0c;
+    border-radius: 0.8em;
+    cursor: pointer;
+    overflow-y: auto;
+    max-height: 362px;
+}
+
+.manga::-webkit-scrollbar {
+    width: 6px;
+}
+
+.manga::-webkit-scrollbar-thumb {
+    background-color: #535353;
+    border-radius: 6px;
+}
+
+.manga::-webkit-scrollbar-track {
+    background-color: #272525;
+}
+
+.description {
+    position: absolute;
+    padding: 10px;
 }
