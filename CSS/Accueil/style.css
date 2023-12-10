@@ -3,13 +3,13 @@
 
 @import url(/CSS/Accueil/calendar.css);
 
-    * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     margin: 0;
     background: #C4C4C4;
 }
@@ -20,7 +20,7 @@ body{
     z-index: 1000;
 }
 
-main.spar{
+main.spar {
     flex-grow: 1;
 }
 
@@ -49,7 +49,7 @@ main.spar{
     transition: .3s;
     margin-bottom: 20px;
     padding-left: 20px;
-    
+
 }
 
 a {
@@ -88,15 +88,15 @@ li span:nth-child(2) {
 }
 
 .logo {
-  width: 1.5vw;
-  filter: grayscale(50%);
-  height: 3vh;
+    width: 1.5vw;
+    filter: grayscale(50%);
+    height: 3vh;
 }
 
 .titre {
-  font-weight: bold;
-  font-size: 1.5em;
-  font-family: 'Nova Square', sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'Nova Square', sans-serif;
 }
 
 .onglet-panier {
@@ -120,7 +120,7 @@ li span:nth-child(2) {
     right: 1vw;
 }
 
-.grid-body-actu{
+.grid-body-actu {
     display: flex;
     justify-content: center;
 }
