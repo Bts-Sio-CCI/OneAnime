@@ -17,20 +17,22 @@
 .calendar {
     font-family: 'IBM Plex Sans', sans-serif;
     position: relative;
-    max-width: 400px; 
-    min-width: 320px;
-    background: var(--calendar-bg-color);
+    background: #272525;
     color: var(--calendar-font-color);
     margin: 20px auto;
+    margin-right: 15vw;
     box-sizing: border-box;
     overflow: hidden;
     font-weight: normal;
     border-radius: var(--calendar-border-radius);
-    height: 15vw;
+    height: auto;
+    width: auto;
+    
 }
 
 .calendar-inner {
     padding: 10px 10px;
+    width: 500px;
 }
 
 .calendar .calendar-inner .calendar-body {
@@ -83,7 +85,7 @@
     text-align: center;
     cursor: pointer;
     margin: 3px 0px;
-    background: var(--calendar-current-date-color);
+    background: #0c0c0c;
     padding: 8px 0px;
     border-radius: 10px;
     width: 80%;

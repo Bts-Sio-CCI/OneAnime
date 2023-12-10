@@ -11,12 +11,12 @@
 
 body{
     margin: 0;
-    background: linear-gradient(#D9D9D9, #C4C4C4);
+    background: #C4C4C4;
 }
 
 .navbar {
     position: fixed;
-    height: 100%;
+    height: auto;
     z-index: 1000;
 }
 
@@ -29,7 +29,6 @@ main.spar{
     top: 0;
     left: 0;
     display: flex;
-    background: linear-gradient(#D9D9D9, #C4C4C4);
     z-index: 2;
 }
 
@@ -121,18 +120,17 @@ li span:nth-child(2) {
     right: 1vw;
 }
 
-
 .grid-body-actu{
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
 }
 
-.actu-box-1 {
-    background-color: red;
-    width: 200px; 
-    height: 200px; 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.Accueil-home {
+    padding-right: 15vw;
+    margin-top: 3vh;
+    margin-left: 10vw;
+}
+
+.event {
+    margin-top: 5vh;
 }

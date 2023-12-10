@@ -139,3 +139,8 @@ li span:nth-child(2) {
     background: linear-gradient(#D9D9D9, #C4C4C4);
     z-index: 2;
 }
+
+.search-button-class {
+    background-color: transparent;
+    color: white;
+}
