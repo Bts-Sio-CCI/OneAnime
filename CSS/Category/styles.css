@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    background: #535353;;
+}
+
 #main-container {
     position: absolute;
     top: 0;
@@ -122,9 +127,8 @@ li span:nth-child(2) {
 }
 
 .barre {
-    padding-top: 1%;
+    padding-top: 0.5%;
     display: flex;
-    background: #535353;
 }
 
 .search-button {
@@ -143,26 +147,23 @@ li span:nth-child(2) {
 
 .size-image{
     width: 210px;
-    height:328px;
+    height:100%;
     border-radius: 0.8em;
 }
 
 .liste-manga {
     display: flex;
-    background: #535353;
     columns: 5;
     padding-right: 2%;
-    padding-bottom: 2.3%;
-    z-index: 1;
+    padding-top: 1%;
 }
 
 .manga{
     position: relative;
     background-color: #272525;
-    margin-top: 3vh;
+    margin-top: 1.5%;
     margin-left: 7%;
     width: 13%;
-    text-align: center;
     border: 15px solid #272525;
     border-radius: 0.8em;
     overflow: hidden;
@@ -174,7 +175,7 @@ li span:nth-child(2) {
     border-radius: 0.8em;
     cursor: pointer;
     overflow-y: auto;
-    max-height: 362px;
+    position: relative;
 }
 
 .manga::-webkit-scrollbar {
@@ -192,5 +193,4 @@ li span:nth-child(2) {
 
 .description {
     position: absolute;
-    padding: 10px;
 }
