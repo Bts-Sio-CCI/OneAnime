@@ -146,9 +146,10 @@ li span:nth-child(2) {
 }
 
 .size-image{
-    width: 210px;
+    width: 100%;
     height:100%;
     border-radius: 0.8em;
+    position:relative;
 }
 
 .liste-manga {
@@ -166,16 +167,17 @@ li span:nth-child(2) {
     width: 13%;
     border: 15px solid #272525;
     border-radius: 0.8em;
-    overflow: hidden;
+    overflow-y:auto;
 }
 
 .manga:hover{
     background: #0c0c0c;
     border: 15px solid #0c0c0c;
     border-radius: 0.8em;
-    cursor: pointer;
-    overflow-y: auto;
-    position: relative;
+}
+
+.manga:hover .size-image{
+    filter: blur(0.7px);
 }
 
 .manga::-webkit-scrollbar {
