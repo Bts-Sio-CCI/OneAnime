@@ -156,7 +156,7 @@ li span:nth-child(2) {
     display: flex;
     columns: 5;
     padding-right: 2%;
-    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 .manga{
@@ -168,6 +168,7 @@ li span:nth-child(2) {
     border: 15px solid #272525;
     border-radius: 0.8em;
     overflow-y:auto;
+    max-height: 347px;
 }
 
 .manga:hover{
