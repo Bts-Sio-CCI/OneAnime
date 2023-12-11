@@ -169,6 +169,7 @@ li span:nth-child(2) {
     border-radius: 0.8em;
     overflow-y:auto;
     max-height: 347px;
+    z-index: 0;
 }
 
 .manga:hover{
@@ -186,14 +187,29 @@ li span:nth-child(2) {
 }
 
 .manga::-webkit-scrollbar-thumb {
-    background-color: #535353;
-    border-radius: 6px;
-}
-
-.manga::-webkit-scrollbar-track {
     background-color: #272525;
+    border-radius: 6px;
 }
 
 .description {
     position: absolute;
+    background: #272525;
+    border: 5px solid #535353;
+    border-radius: 0.8em;
+}
+
+.button-panier{
+    position: absolute;
+    width: 25%;
+    height: 14%;
+    background: #272525;
+    border: 5px solid #272525;
+    border-radius: 0.8em;
+    left: 2%;
+    bottom: 1%;
+    cursor: pointer;
+}
+
+.button-panier:hover{
+    background: #0c0c0c;
 }
