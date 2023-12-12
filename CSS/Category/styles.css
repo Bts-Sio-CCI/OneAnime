@@ -209,7 +209,3 @@ li span:nth-child(2) {
     bottom: 1%;
     cursor: pointer;
 }
-
-.button-panier:hover{
-    background: #0c0c0c;
-}
