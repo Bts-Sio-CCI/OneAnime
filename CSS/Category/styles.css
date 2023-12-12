@@ -178,7 +178,7 @@ li span:nth-child(2) {
 }
 
 .manga:hover .size-image{
-    filter: blur(0.7px);
+    filter: blur(0.4px);
 }
 
 .manga::-webkit-scrollbar {
