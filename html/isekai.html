@@ -1,109 +1,115 @@
 <!DOCTYPE html>
 <html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OneAnime</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/Category/styles.css" />
+    <link rel="icon" type="images/x-icon" href="/assets/logo.png" />
+  </head>
 
-<head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>OneAnime</title>
-        <link rel="stylesheet" type="text/css" href="../CSS/Category/styles.css" />
-        <link rel="icon" type="images/x-icon" href="/assets/logo.png" />
-</head>
+  <body>
+    <section class="barre">
+      <div class="div-search">
+        <input type="search" class="recherche" id="search-bar" />
+        <button class="search-button"><a>Search</a></button>
+      </div>
+    </section>
+    <navbar id="main-container">
+      <div class="menu">
+        <ul class="menu-content">
+          <li class="onglet-titre">
+            <a href="../index.html"> <span class="material-symbols-outlined">home</span><span class="titre">OneManga</span></a>
+          </li>
+          <li>
+            <a href="./seinen.html">
+              <span class="material-symbols-outlined"><img class="logo" src="../assets/480px-Moins18.svg-removebg-preview.png" /></span><span>Seinen</span></a>
+          </li>
+          <li>
+            <a href="./shonen.html">
+              <span class="material-symbols-outlined"><img class="logo" src="../assets/unnamed-removebg-preview.png" /></span><span>Shōnen</span></a>
+          </li>
+          <li>
+            <a href="./shojo.html">
+              <span class="material-symbols-outlined"><img class="logo" src="../assets/shojo.png" /></span><span>Shōjo</span></a>
+          </li>
+          <li>
+            <a href="./isekai.html">
+              <span class="material-symbols-outlined"><img class="logo" src="../assets/NerveGear-removebg-preview.png" /></span><span>Isekai</span></a>
+          </li>
+          <li>
+            <a href="./romance.html">
+              <span class="material-symbols-outlined"><img class="logo" src="../assets/romance-removebg-preview.png" /></span><span>Romance</span></a>
+          </li>
+          <li>
+            <a href="./fantasy.html">
+              <span class="material-symbols-outlined"><img class="logo" src="../assets/fantasy.png" /></span><span>Fantasy</span></a>
+          </li>
+          <li class="onglet-panier">
+            <a href="../html/panier.html"> <span class="material-symbols-outlined">shopping_cart</span><span>Panier</span></a>
+          </li>
+          <li class="onglet-forum">
+            <a href="../html/forum.html"> <span class="material-symbols-outlined">forum</span><span>Forum</span></a>
+          </li>
+          <li class="onglet-settings">
+            <a href="../html/parametre.html"> <span class="material-symbols-outlined">settings</span><span>Paramètres</span></a>
+          </li>
+        </ul>
+      </div>
+    </navbar>
 
-<body>
-        <section class="barre">
-                <div class="div-search">
-                        <input type="search" class="recherche" id="search-bar">
-                        <button class="search-button"><a>Search</a></button>
-                </div>
-        </section>
-        <navbar id="main-container">
-                <div class="menu">
-                        <ul class="menu-content">
-                                <li class="onglet-titre"><a href="../index.html">
-                                                <span class="material-symbols-outlined">home</span><span
-                                                        class="titre">OneManga</span></a></li>
-                                <li><a href="./seinen.html">
-                                                <span class="material-symbols-outlined"><img class="logo"
-                                                                src="../assets/480px-Moins18.svg-removebg-preview.png"></span><span>Seinen</span></a>
-                                </li>
-                                <li><a href="./shonen.html">
-                                                <span class="material-symbols-outlined"><img class="logo"
-                                                                src="../assets/unnamed-removebg-preview.png"></span><span>Shōnen</span></a>
-                                </li>
-                                <li><a href="./shojo.html">
-                                                <span class="material-symbols-outlined"><img class="logo"
-                                                                src="../assets/shojo.png"></span><span>Shōjo</span></a>
-                                </li>
-                                <li><a href="./isekai.html">
-                                                <span class="material-symbols-outlined"><img class="logo"
-                                                                src="../assets/NerveGear-removebg-preview.png"></span><span>Isekai</span></a>
-                                </li>
-                                <li><a href="./romance.html">
-                                                <span class="material-symbols-outlined"><img class="logo"
-                                                                src="../assets/romance-removebg-preview.png"></span><span>Romance</span></a>
-                                </li>
-                                <li><a href="./fantasy.html">
-                                                <span class="material-symbols-outlined"><img class="logo"
-                                                                src="../assets/fantasy.png"></span><span>Fantasy</span></a>
-                                </li>
-                                <li class="onglet-panier"><a href="../html/panier.html">
-                                                <span
-                                                        class="material-symbols-outlined">shopping_cart</span><span>Panier</span></a>
-                                </li>
-                                <li class="onglet-forum"><a href="../html/forum.html">
-                                                <span
-                                                        class="material-symbols-outlined">forum</span><span>Forum</span></a>
-                                </li>
-                                <li class="onglet-settings"><a href="../html/parametre.html">
-                                                <span
-                                                        class="material-symbols-outlined">settings</span><span>Paramètres</span></a>
-                                </li>
-                        </ul>
-                </div>
-                </div>
-        </navbar>
-
-        <section class="liste-manga">
-                <div class="manga"><img class="size-image" src="../assets/pics/Isekai/bg_sao.jpg">
-                        <p class="description"><a>#</a></p>
-                        <div class="button-panier"><a href="../html/panier.html"><span
-                                                class="material-symbols-outlined">shopping_cart</span></a></div>
-                </div>
-                <div class="manga"><img class="size-image" src="../assets/pics/Isekai/">
-                        <p class="description"><a>#</a></p>
-                        <div class="button-panier"><a href="../html/panier.html"><span
-                                                class="material-symbols-outlined">shopping_cart</span></a></div>
-                </div>
-                <div class="manga"><img class="size-image" src="../assets/pics/Isekai/">
-                        <p class="description"><a>#</a></p>
-                        <div class="button-panier"><a href="../html/panier.html"><span
-                                                class="material-symbols-outlined">shopping_cart</span></a></div>
-                </div>
-                <div class="manga"><img class="size-image" src="../assets/pics/Isekai/">
-                        <p class="description"><a>#</a></p>
-                        <div class="button-panier"><a href="../html/panier.html"><span
-                                                class="material-symbols-outlined">shopping_cart</span></a></div>
-                </div>
-                <div class="manga"><img class="size-image" src="../assets/pics/Isekai/">
-                        <p class="description"><a>#</a></p>
-                        <div class="button-panier"><a href="../html/panier.html"><span
-                                                class="material-symbols-outlined">shopping_cart</span></a></div>
-                </div>
-        </section>
-        <section class="liste-manga">
-                <div class="manga"><img class="size-image" src="../assets/pics/Isekai/">
-                        <p class="description"><a>#</a></p>
-                        <div class="button-panier"><a href="../html/panier.html"><span
-                                                class="material-symbols-outlined">shopping_cart</span></a></div>
-                </div>
-                <div class="manga"><img class="size-image" src="../assets/pics/Isekai/">
-                        <p class="description"><a>#</a></p>
-                        <div class="button-panier"><a href="../html/panier.html"><span
-                                                class="material-symbols-outlined">shopping_cart</span></a></div>
-                </div>
-
-        </section>
-
-</body>
-
+    <section class="liste_Manga">
+      <div class="manga">
+        <img class="size-image" alt="" src="../assets/pics/Isekai/bg_sao.jpg" />
+        <p class="description"><a>#</a></p>
+        <div class="button-panier">
+          <a href="../html/panier.html"><span class="material-symbols-outlined">shopping_cart</span></a>
+        </div>
+      </div>
+      <div class="manga">
+        <img class="size-image" alt="" src="../assets/pics/Isekai/" />
+        <p class="description"><a>#</a></p>
+        <div class="button-panier">
+          <a href="../html/panier.html"><span class="material-symbols-outlined">shopping_cart</span></a>
+        </div>
+      </div>
+      <div class="manga">
+        <img class="size-image" alt="" src="../assets/pics/Isekai/" />
+        <p class="description"><a>#</a></p>
+        <div class="button-panier">
+          <a href="../html/panier.html"><span class="material-symbols-outlined">shopping_cart</span></a>
+        </div>
+      </div>
+      <div class="manga">
+        <img class="size-image" alt="" src="../assets/pics/Isekai/" />
+        <p class="description"><a>#</a></p>
+        <div class="button-panier">
+          <a href="../html/panier.html"><span class="material-symbols-outlined">shopping_cart</span></a>
+        </div>
+      </div>
+      <div class="manga">
+        <img class="size-image" alt="" src="../assets/pics/Isekai/" />
+        <p class="description"><a>#</a></p>
+        <div class="button-panier">
+          <a href="../html/panier.html"><span class="material-symbols-outlined">shopping_cart</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="liste-manga">
+      <div class="manga">
+        <img class="size-image" alt="" src="../assets/pics/Isekai/" />
+        <p class="description"><a>#</a></p>
+        <div class="button-panier">
+          <a href="../html/panier.html"><span class="material-symbols-outlined">shopping_cart</span></a>
+        </div>
+      </div>
+      <div class="manga">
+        <img class="size-image" alt="" src="../assets/pics/Isekai/" />
+        <p class="description"><a>#</a></p>
+        <div class="button-panier">
+          <a href="../html/panier.html"><span class="material-symbols-outlined">shopping_cart</span></a>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
