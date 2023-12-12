@@ -49,7 +49,6 @@ a {
 
 .material-symbols-outlined {
     font-size: 25px;
-    margin-right: 10px;
     background: #0c0c0c;
     border-radius: 50%;
     padding: 10px;
@@ -202,14 +201,8 @@ li span:nth-child(2) {
     position: absolute;
     width: 25%;
     height: 14%;
-    background: #272525;
-    border: 5px solid #272525;
     border-radius: 0.8em;
-    left: 2%;
-    bottom: 1%;
+    left: 3%;
+    bottom: 6%;
     cursor: pointer;
-}
-
-.button-panier:hover{
-    background: #0c0c0c;
 }
