@@ -152,7 +152,7 @@ li span:nth-child(2) {
     position:relative;
 }
 
-.liste-manga {
+.liste_Manga {
     display: flex;
     columns: 5;
     padding-right: 2%;
@@ -202,10 +202,9 @@ li span:nth-child(2) {
     position: absolute;
     width: 25%;
     height: 14%;
-    background: #272525;
-    border: 5px solid #272525;
-    border-radius: 0.8em;
+    background-color: transparent;
     left: 2%;
     bottom: 1%;
     cursor: pointer;
+
 }

@@ -134,3 +134,13 @@ li span:nth-child(2) {
 .event {
     margin-top: 5vh;
 }
+
+
+.map-loc {
+    margin-top: 2vw;
+    margin-left: 10vw;
+    width: 40vw;
+    height: 40vh; 
+    border: 0;
+    border-radius: 0.5em;
+}
