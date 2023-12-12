@@ -49,7 +49,6 @@ a {
 
 .material-symbols-outlined {
     font-size: 25px;
-    margin-right: 10px;
     background: #0c0c0c;
     border-radius: 50%;
     padding: 10px;
@@ -179,7 +178,7 @@ li span:nth-child(2) {
 }
 
 .manga:hover .size-image{
-    filter: blur(0.7px);
+    filter: blur(0.4px);
 }
 
 .manga::-webkit-scrollbar {
@@ -202,9 +201,9 @@ li span:nth-child(2) {
     position: absolute;
     width: 25%;
     height: 14%;
-    background-color: transparent;
-    left: 2%;
-    bottom: 1%;
+    border-radius: 0.8em;
+    left: 3%;
+    bottom: 6%;
     cursor: pointer;
 
 }
