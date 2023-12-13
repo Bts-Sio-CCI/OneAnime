@@ -16,6 +16,7 @@
 
 .calendar {
   font-family: 'IBM Plex Sans', sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
   position: relative;
   background: var(--calendar-bg-color);
   background: #272525;
@@ -27,8 +28,10 @@
   font-weight: normal;
   border-radius: var(--calendar-border-radius);
   height: 15vw;
+  height: 15vw;
   height: auto;
   width: auto;
+
 }
 
 

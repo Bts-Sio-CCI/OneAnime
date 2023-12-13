@@ -124,12 +124,12 @@ li span:nth-child(2) {
 }
 
 #search-bar {
-    padding: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
-    width: 94%;
-    border: 5px solid #272525;
-    border-radius: 0.8em;
+  padding: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 5px solid #272525;
+  border-radius: 0.8em;
 }
 
 .barre {
@@ -137,15 +137,6 @@ li span:nth-child(2) {
     display: flex;
 }
 
-.search-button {
-    width: 5%;
-    height: 100%;
-    padding-top: 2px;
-    background: #272525;
-    border: 5px solid #272525;
-    border-radius: 0.8em;
-    cursor: pointer;
-}
 
 .search-button:hover {
     background: #0c0c0c;
@@ -158,11 +149,11 @@ li span:nth-child(2) {
     position: relative;
 }
 
-.liste_Manga {
-    display: flex;
-    columns: 5;
-    padding-right: 2%;
-    padding-bottom: 1%;
+#liste_Manga {
+  display: flex;
+  columns: 5;
+  padding-right: 2%;
+  padding-bottom: 1%;
 }
 
 .manga {

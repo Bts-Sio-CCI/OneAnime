@@ -148,3 +148,7 @@ li span:nth-child(2) {
     border: 15px solid #272525;
     border-radius: 0.8em;
 }
+
+.shop-title-body{
+  margin-left: 45vw;
+}
