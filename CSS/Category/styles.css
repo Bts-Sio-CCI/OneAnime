@@ -2,205 +2,214 @@
 @import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  background: #535353;
+    margin: 0;
+    background: #535353;
 }
 
 #main-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 2;
 }
 
 .menu {
-  transition: 0.3s;
-  background: #272525;
-  padding: 20px 20px 20px 0;
-  width: 85px;
-  box-shadow: 8px 0px 9px 0px #594f4f;
-  backdrop-filter: blur(5px);
-  min-height: 100vh;
+    height: 100%;
+    transition: 0.3s;
+    background: #272525;
+    padding-top : 1vh;
+    left: 0;
+    right: 1vw;
+    width: 85px;
+    box-shadow: 8px 0px 9px 0px #594f4f;
+    backdrop-filter: blur(5px);
+    min-height: 100vh;
 }
 
 .menu-content li {
-  list-style: none;
-  border-radius: 0px 50px 50px 0;
-  transition: 0.3s;
-  margin-bottom: 20px;
-  padding-left: 20px;
+    list-style: none;
+    border-radius: 0px 50px 50px 0;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    padding-left: 20px;
 }
 
 a {
-  text-decoration: none;
-  color: rgb(213, 213, 213);
-  display: flex;
-  align-items: center;
-  font-family: "calibri";
+    text-decoration: none;
+    color: rgb(213, 213, 213);
+    display: flex;
+    align-items: center;
+    font-family: "calibri";
 }
 
 .material-symbols-outlined {
-  font-size: 25px;
-  background: #0c0c0c;
-  border-radius: 50%;
-  padding: 10px;
+    font-size: 25px;
+    border-radius: 50%;
+    padding: 10px;
+    border: 5px solid #0c0c0c;
+    background: #272525;
+    border-radius: 0.8em;
+}
+
+.material-symbols-outlined:hover {
+    background: #0c0c0c;
 }
 
 li:hover {
-  background: #0c0c0c;
+    background: #0c0c0c;
 }
 
 li span:nth-child(2) {
-  display: none;
+    display: none;
 }
 
 .menu:hover {
-  width: 260px;
+    width: 260px;
 }
 
 .menu:hover li span:nth-child(2) {
-  display: block;
-  text-indent: 1vw;
-  font-weight: bold;
+    display: block;
+    text-indent: 1vw;
+    font-weight: bold;
 }
 
 .logo {
-  width: 1.5vw;
-  filter: grayscale(50%);
-  height: 3vh;
+    width: 1.5vw;
+    filter: grayscale(50%);
+    height: 3vh;
 }
 
 .titre {
-  font-weight: bold;
-  font-size: 1.5em;
-  font-family: "Nova Square", sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: "Nova Square", sans-serif;
 }
 
-.onglet-panier {
-  position: absolute;
-  bottom: 18vh;
-  left: 0;
-  right: 1vw;
+.onglet-shop {
+    position: absolute;
+    bottom: 18vh;
+    left: 0;
+    right: 1vw;
 }
 
 .onglet-forum {
-  position: absolute;
-  bottom: 9vh;
-  left: 0;
-  right: 1vw;
+    position: absolute;
+    bottom: 9vh;
+    left: 0;
+    right: 1vw;
 }
 
 .onglet-settings {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 1vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 1vw;
 }
 
 .div-search {
-  background-color: #272525;
-  margin-left: 25%;
-  width: 50%;
-  text-align: center;
-  border: 15px solid #272525;
-  border-radius: 0.8em;
-  box-sizing: border-box;
+    background-color: #272525;
+    margin-left: 25%;
+    width: 50%;
+    text-align: center;
+    border: 15px solid #272525;
+    border-radius: 0.8em;
+    box-sizing: border-box;
 }
 
 #search-bar {
-  padding: 8px;
-  font-size: 16px;
-  box-sizing: border-box;
-  width: 94%;
-  border: 5px solid #272525;
-  border-radius: 0.8em;
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 94%;
+    border: 5px solid #272525;
+    border-radius: 0.8em;
 }
 
 .barre {
-  padding-top: 0.5%;
-  display: flex;
+    padding-top: 0.5%;
+    display: flex;
 }
 
 .search-button {
-  width: 5%;
-  height: 100%;
-  padding-top: 2px;
-  background: #272525;
-  border: 5px solid #272525;
-  border-radius: 0.8em;
-  cursor: pointer;
+    width: 5%;
+    height: 100%;
+    padding-top: 2px;
+    background: #272525;
+    border: 5px solid #272525;
+    border-radius: 0.8em;
+    cursor: pointer;
 }
 
 .search-button:hover {
-  background: #0c0c0c;
+    background: #0c0c0c;
 }
 
 .size-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 0.8em;
-  position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8em;
+    position: relative;
 }
 
 .liste_Manga {
-  display: flex;
-  columns: 5;
-  padding-right: 2%;
-  padding-bottom: 1%;
+    display: flex;
+    columns: 5;
+    padding-right: 2%;
+    padding-bottom: 1%;
 }
 
 .manga {
-  position: relative;
-  background-color: #272525;
-  margin-top: 1.5%;
-  margin-left: 7%;
-  width: 13%;
-  border: 15px solid #272525;
-  border-radius: 0.8em;
-  overflow-y: auto;
-  max-height: 347px;
-  z-index: 0;
+    position: relative;
+    background-color: #272525;
+    margin-top: 1.5%;
+    margin-left: 7%;
+    width: 13%;
+    border: 15px solid #272525;
+    border-radius: 0.8em;
+    overflow-y: auto;
+    max-height: 347px;
+    z-index: 0;
 }
 
 .manga:hover {
-  background: #0c0c0c;
-  border: 15px solid #0c0c0c;
-  border-radius: 0.8em;
+    background: #0c0c0c;
+    border: 15px solid #0c0c0c;
+    border-radius: 0.8em;
 }
 
 .manga:hover .size-image {
-  filter: blur(0.4px);
+    filter: blur(0.4px);
 }
 
 .manga::-webkit-scrollbar {
-  width: 6px;
+    width: 6px;
 }
 
 .manga::-webkit-scrollbar-thumb {
-  background-color: #272525;
-  border-radius: 6px;
+    background-color: #272525;
+    border-radius: 6px;
 }
 
 .description {
-  position: absolute;
-  background: #272525;
-  border: 5px solid #535353;
-  border-radius: 0.8em;
+    position: absolute;
+    background: #272525;
+    border: 5px solid #535353;
+    border-radius: 0.8em;
 }
 
-.button-panier {
-  position: absolute;
-  width: 25%;
-  height: 14%;
-  border-radius: 0.8em;
-  left: 3%;
-  bottom: 6%;
-  cursor: pointer;
+.button-shop {
+    position: absolute;
+    width: 25%;
+    height: 14%;
+    border-radius: 0.8em;
+    left: 3%;
+    bottom: 10%;
+    cursor: pointer;
 }
