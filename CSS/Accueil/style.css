@@ -141,3 +141,7 @@ li span:nth-child(2) {
   border: 0;
   border-radius: 0.5em;
 }
+
+.shop-title-body{
+  margin-left: 45vw;
+}
