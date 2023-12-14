@@ -38,7 +38,7 @@ body {
     border-radius: 0px 50px 50px 0;
     transition: 0.3s;
     margin-bottom: 20px;
-    padding-left: 20px;
+    padding-left: 15%;
 }
 
 a {
@@ -56,6 +56,7 @@ a {
     border: 5px solid #0c0c0c;
     background: #272525;
     border-radius: 0.8em;
+    max-height: 58px;
 }
 
 li:hover {
@@ -197,6 +198,6 @@ li span:nth-child(2) {
     height: 14%;
     border-radius: 0.8em;
     left: 3%;
-    bottom: 10%;
+    bottom: 6%;
     cursor: pointer;
 }
