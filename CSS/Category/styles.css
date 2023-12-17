@@ -146,7 +146,7 @@ li span:nth-child(2) {
     position: relative;
 }
 
-.liste_Manga {
+#liste_Manga {
   display: flex;
   columns: 5;
   padding-right: 2%;

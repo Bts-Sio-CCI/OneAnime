@@ -146,6 +146,21 @@ li span:nth-child(2) {
     border-radius: 0.8em;
 }
 
-.shop-title-body{
-  margin-left: 45vw;
+.shop-title{
+  text-align: center;
+  background-color: gray;
+}
+
+
+.shop-body{
+    text-align: center;
+    background-color: red;
+    height: 96vh;
+
+}
+
+.panier{
+    background-color: aqua;
+    height: 30vh;
+    margin-top: 10vh;
 }
