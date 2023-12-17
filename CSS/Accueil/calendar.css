@@ -21,17 +21,14 @@
   background: var(--calendar-bg-color);
   background: #272525;
   color: var(--calendar-font-color);
-  margin: 20px auto;
-  margin-right: 2vw;
   box-sizing: border-box;
   overflow: hidden;
   font-weight: normal;
   border-radius: var(--calendar-border-radius);
-  height: 15vw;
-  height: 15vw;
-  height: auto;
-  width: auto;
-
+  height: 30%;
+  width: 27%;
+  margin-left: 70%;
+  
 }
 
 
