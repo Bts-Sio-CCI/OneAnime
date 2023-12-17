@@ -151,16 +151,28 @@ li span:nth-child(2) {
   background-color: gray;
 }
 
-
-.shop-body{
-    text-align: center;
-    background-color: red;
-    height: 96vh;
-
+.panier{
+    margin-left: 10vw;
 }
 
-.panier{
-    background-color: aqua;
-    height: 30vh;
-    margin-top: 10vh;
+.cart-item {
+    margin-right: 10vw;
+    padding: 10px; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.cart-item-image {
+    width: 10%; 
+    height: auto;
+    border-radius: 8px; 
+}
+
+.delete-button {
+    background-color: #ff3333; 
+    color: #ffffff; 
+    padding: 8px 12px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
 }
