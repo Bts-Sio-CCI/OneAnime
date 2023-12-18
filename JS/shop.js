@@ -46,6 +46,9 @@ function removeFromCart(id) {
         // Décrémenter la quantité de 1 à chaque clic sur "X"
         existingItem.quantity = Math.max(0, (existingItem.quantity || 1) - 0.5);
 
+        // Mettre à jour le prix proportionnellement à la nouvelle quantité
+        existingItem.price = existingItem.price/existingItem.quantity;
+
         // Si la quantité est maintenant égale à 0, supprimer l'élément du panier
         if (existingItem.quantity === 0) {
             cart = cart.filter(item => item.id !== id);
@@ -58,7 +61,7 @@ function removeFromCart(id) {
     // Mettre à jour l'affichage du panier sur la page
     updateCartDisplay();
 
-    console.log(`Produit "${id}" supprimé du panier. Nouvelle quantité : ${existingItem.quantity}`);
+    console.log(`Produit "${id}" supprimé du panier. Nouvelle quantité : ${existingItem ? existingItem.quantity : 0}`);
 }
 
 
