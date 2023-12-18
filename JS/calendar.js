@@ -3,7 +3,7 @@ function CalendarControl() {
   const calendarControl = {
     localDate: new Date(),
     prevMonthLastDate: null,
-    calWeekDays: ["Dim.", "Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam."],
+    calWeekDays: ["Lun.", "Mar.", "Mer.", "Jeu.", "Ven.", "Sam.", "Dim."],
     calMonthName: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
     daysInMonth: function (month, year) {
       return new Date(year, month, 0).getDate();
@@ -12,10 +12,10 @@ function CalendarControl() {
       return new Date(calendar.getFullYear(), calendar.getMonth(), 1);
     },
     lastDay: function () {
-      return new Date(calendar.getFullYear(), calendar.getMonth() + 1, 0);
+      return new Date(calendar.getFullYear(), calendar.getMonth() , 0);
     },
     firstDayNumber: function () {
-      return calendarControl.firstDay().getDay() + 1;
+      return calendarControl.firstDay().getDay() ;
     },
     lastDayNumber: function () {
       return calendarControl.lastDay().getDay() + 1;
