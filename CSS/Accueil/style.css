@@ -3,6 +3,9 @@
 
 @import url(/CSS/Accueil/calendar.css);
 
+@media (min-width) {
+    
+}
 * {
     margin: 0;
     padding: 0;
