@@ -162,12 +162,6 @@ li span:nth-child(2) {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
-.cart-item-image {
-    width: 10%; 
-    height: auto;
-    border-radius: 8px; 
-}
-
 .delete-button {
     background-color: #ff3333; 
     color: #ffffff; 
