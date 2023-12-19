@@ -47,7 +47,7 @@ function removeFromCart(id) {
         existingItem.quantity = Math.max(0, (existingItem.quantity || 1) - 0.5);
 
         // Mettre à jour le prix proportionnellement à la nouvelle quantité
-        existingItem.price = existingItem.price/existingItem.quantity;
+        existingItem.price = existingItem.price - existingItem.quantity;
 
         // Si la quantité est maintenant égale à 0, supprimer l'élément du panier
         if (existingItem.quantity === 0) {
