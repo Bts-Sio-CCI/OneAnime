@@ -201,3 +201,21 @@ li span:nth-child(2) {
     bottom: 6%;
     cursor: pointer;
 }
+
+
+
+@media screen and (min-width:1440px) {
+    #liste_Manga{
+        padding-right: 2%;
+        padding-left: 5%;
+    }
+
+    #liste_Manga .manga {
+        width: 13%;
+    }
+} 
+
+/* @media screen and (min-width:928px) {
+    #liste
+} */
+    

@@ -34,7 +34,7 @@
 
 .calendar-inner {
     padding: 10px 10px;
-    width: 500px;
+    /* width: 500px; */
 }
 
 .calendar .calendar-inner .calendar-body {
@@ -157,3 +157,29 @@
     border: 1px solid transparent;
     pointer-events: none;
 }
+
+
+@media screen and (max-width: 1240px) {
+    .calendar {
+        display: none;
+    }
+    .calendar inner {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .calendar {
+        width: 100%;
+        max-width: none;
+    }
+    
+}
+
+
+@media screen and (max-width:2400px) {
+    .calendar{
+        margin-right: 50%;
+    }
+}
+
