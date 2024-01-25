@@ -1,4 +1,4 @@
-## Installation  
+## -=Installation=-
 
 ### Clone the project
 
@@ -6,7 +6,7 @@
 git clone https://github.com/Bts-Sio-CCI/OneAnime.git
 ```
 
-## Languages
+## -=Languages=-
 
 ### Frontend
 
