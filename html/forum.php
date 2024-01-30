@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OneAnime</title>
     <link rel="stylesheet" type="text/css" href="../CSS/Category/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../CSS/Accueil/style.css" />
+    <link rel="stylesheet" type="text/css" href="/CSS/Forum/styles.css" />
     <link rel="icon" type="images/x-icon" href="/assets/logo.png" />
 </head>
 
@@ -53,27 +53,41 @@
                                 src="../assets/shop.png"></span><span>Shop</span></a>
                 </li>
                 <li class="onglet-forum">
-                    <a href="../html/forum.php"> <span class="material-symbols-outlined"><img class="logo" alt="forum"
+                    <a href="../html/forum.html"> <span class="material-symbols-outlined"><img class="logo" alt="forum"
                                 src="../assets/forum.png"></span><span>Forum</span></a>
                 </li>
                 <li class="onglet-settings">
-                    <a href="../html/parametre.html"> <span class="material-symbols-outlined"><img class="logo" alt="settings"
-                                src="../assets/settings.png"></span><span>Paramètres</span></a>
+                    <a href="../html/parametre.html"> <span class="material-symbols-outlined"><img class="logo"
+                                alt="settings" src="../assets/settings.png"></span><span>Paramètres</span></a>
                 </li>
             </ul>
         </div>
     </nav>
+    <?php
 
-    <div class="shop-title-body">
-        <h1 class="shop-title">Votre Panier</h1>
-        <div class="shop-body">
-            <div class="panier">
-                
+
+
+    ?>
+
+    <div class="login-form">
+        <form action="action_register.php" method="post">
+            <h2 class="text-center">Log in</h2>
+            <div class="form-group">
+                <input type="text" name="login" class="form-control" placeholder="Username" required="required">
             </div>
-              
-        </div>
+            <div class="form-group">
+                <input type="password" name="pass" class="form-control" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            </div>
+            <div class="clearfix">
+                <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+                <a href="#" class="float-right">Forgot Password?</a>
+            </div>
+        </form>
+        <p class="text-center"><a href="#">Create an Account</a></p>
     </div>
-    <script src="../JS/shop.js" type="application/javascript" defer></script>
 </body>
 
 </html>
