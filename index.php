@@ -1,5 +1,6 @@
 <?php
-   
+   session_start();
+
     if (isset($_GET['page'])){  
         switch($_GET['page']){
             // index.php?page=accueil
@@ -48,9 +49,15 @@
             case 'register':
                 require_once 'controller/register.php';
                 break;
-            // index.php?page=register
+
+            // index.php?page=romance
             case 'romance':
                 require_once 'controller/romance.php';
+                break;
+             
+            // index.php?page=register
+            case 'login':
+                require_once 'controller/login.php';
                 break;
         }
         

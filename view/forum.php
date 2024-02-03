@@ -14,24 +14,6 @@
 
     <body>
         <?php require_once'view/components/navbar.html'?>
-        <div class="login-form">
-            <form action="/php/action_register.php" method="post">
-                <h2 class="text-center">Connexion</h2>
-                <div class="form-group">
-                    <input type="text" name="login" class="form-control" placeholder="Pseudo" required="required" />
-                </div>
-                <div class="form-group">
-                    <input type="password" name="pass" class="form-control" placeholder="Mot de passe" required="required" />
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
-                </div>
-                <div class="clearfix">
-                    <label class="float-left form-check-label"><input type="checkbox" />Rester connecté</label>
-                    <a href="#" class="float-right">Mot de passe oublié ?</a>
-                </div>
-            </form>
-            <p class="text-center"><a href="#">Pas encore de compte ?</a></p>
-        </div>
+        <h1>HELLO EVERYONE</h1>
     </body>
 </html>
