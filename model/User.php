@@ -51,6 +51,7 @@ function login($email, $password){
 }
 
 
+
 function calculerAge($dateNaissance) {
     $dateNaissance = new DateTime($dateNaissance);
     $dateActuelle = new DateTime();

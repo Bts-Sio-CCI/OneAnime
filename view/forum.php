@@ -13,7 +13,10 @@
     </head>
 
     <body>
-        <?php require_once'view/components/navbar.html'?>
-        <h1>HELLO EVERYONE</h1>
+        <?php require_once'view/components/navbar.html'?> 
+        <form class="disconnect-button" action="" method="post">
+            <button type="submit" name="disconnect" value="1">Déconnexion
+        </form>
     </body>
 </html>
+
