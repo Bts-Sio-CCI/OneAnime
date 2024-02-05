@@ -55,10 +55,16 @@
                 require_once 'controller/romance.php';
                 break;
              
-            // index.php?page=register
+            // index.php?page=login
             case 'login':
                 require_once 'controller/login.php';
                 break;
+
+            // index.php?page=memberlist
+            case 'memberlist':
+                require_once 'controller/memberlist.php';
+                break;
+            
         }
         
     }else {

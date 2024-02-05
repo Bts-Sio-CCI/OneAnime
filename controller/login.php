@@ -15,7 +15,7 @@
             header("Location: index.php?page=forum");
             exit();           
         } else {
-            echo'Mot de passe erroné';
+            echo'Mot de passe erronné';
         }
 
     }

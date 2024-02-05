@@ -76,3 +76,24 @@ function getCategorieId($age){
     
     return $categorie["idCateg"];
 }
+
+function getUsersByCategories($idCategorie){
+    global $pdo;
+
+    $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE idCateg = :idCat");
+    $stmt->execute(['idCat' => $idCategorie]); 
+    $users = $stmt->fetchAll();
+    
+    return $users;
+}
+
+
+function getUsers(){
+    global $pdo;
+
+    $stmt = $pdo->prepare("SELECT * FROM utilisateur");
+    $stmt->execute(); 
+    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $users;
+}
