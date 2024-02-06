@@ -1,3 +1,2 @@
 <?php
-    require_once 'view/seinen.php';
-?>
+require_once 'view/seinen.php';

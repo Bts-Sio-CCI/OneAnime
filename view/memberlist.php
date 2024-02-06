@@ -16,8 +16,10 @@
         <h2 class="text-center">Recherchez un membre par catégorie</h2>
         <select name="categ-select" id="categ-select">
             <option value="">Aucune catégorie</option>
-            <?php foreach($categories as $categorie){ ?>
-                <option value="<?php echo $categorie["idCateg"] ?>"><?php echo $categorie["nomCateg"] ?></option>
+            <?php foreach ($categories as $categorie) { ?>
+                <option value="<?php echo $categorie["idCateg"] ?>">
+                    <?php echo $categorie["nomCateg"] ?>
+                </option>
             <?php } ?>
         </select>
         <input type="submit" value="Envoyez">
@@ -35,16 +37,34 @@
             <th>ID catégorie</th>
         </tr>
         <tr>
-            <?php foreach ($users as $user){?>
-            <td><?php echo $user['idUtilisateur'] ?></td>
-            <td><?php echo $user['nom'] ?></td>
-            <td><?php echo $user['prenom'] ?></td>
-            <td><?php echo $user['dateNaissance'] ?></td>
-            <td><?php echo $user['email'] ?></td>
-            <td><?php echo $user['nomUtilisateur'] ?></td>
-            <td><?php echo $user['adresse'] ?></td>
-            <td><?php echo $user['CP'] ?></td>
-            <td><?php echo $user['idCateg'] ?></td>
+            <?php foreach ($users as $user) { ?>
+                <td>
+                    <?php echo $user['idUtilisateur'] ?>
+                </td>
+                <td>
+                    <?php echo $user['nom'] ?>
+                </td>
+                <td>
+                    <?php echo $user['prenom'] ?>
+                </td>
+                <td>
+                    <?php echo $user['dateNaissance'] ?>
+                </td>
+                <td>
+                    <?php echo $user['email'] ?>
+                </td>
+                <td>
+                    <?php echo $user['nomUtilisateur'] ?>
+                </td>
+                <td>
+                    <?php echo $user['adresse'] ?>
+                </td>
+                <td>
+                    <?php echo $user['CP'] ?>
+                </td>
+                <td>
+                    <?php echo $user['idCateg'] ?>
+                </td>
             <?php } ?>
         </tr>
     </table>

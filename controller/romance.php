@@ -1,3 +1,2 @@
 <?php
-    require_once 'view/romance.php';
-?>
+require_once 'view/romance.php';

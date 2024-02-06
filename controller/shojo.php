@@ -1,3 +1,2 @@
 <?php
-    require_once 'view/shojo.php';
-?>
+require_once 'view/shojo.php';

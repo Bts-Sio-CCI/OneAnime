@@ -1,11 +1,12 @@
 <?php
-function listCategories(){
+function listCategories()
+{
     global $pdo;
 
     $stmt = $pdo->prepare("SELECT * FROM catégorie");
-    $stmt->execute(); 
+    $stmt->execute();
     $cats = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
+
     return $cats;
 
 }
