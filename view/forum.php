@@ -17,6 +17,7 @@
         <form class="disconnect-button" action="" method="post">
             <button type="submit" name="disconnect" value="1">Déconnexion
         </form>
+        
     </body>
 </html>
 

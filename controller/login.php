@@ -1,25 +1,31 @@
 <?php
 
-    
-    require_once 'model/DB.php';
-    require_once 'model/User.php';
-    
-    if(
-        isset($_POST['email']) &&
-        isset($_POST['pass'])
-    ) {
-        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-        
-        $connectResult = login($email, $_POST['pass']);
-        if($connectResult) {
-            header("Location: index.php?page=forum");
-            exit();           
-        } else {
-            echo'Mot de passe erronné';
-        }
 
+require_once 'model/DB.php';
+require_once 'model/User.php';
+
+if (
+    isset($_POST['email']) &&
+    isset($_POST['pass'])
+) {
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+
+    $connectResult = login($email, $_POST['pass']);
+
+    if ($connectResult) {
+    
+        if ($_SESSION['userID'] == 1) {
+            header("Location: index.php?page=memberlist");
+        } else {
+            header("Location: index.php?page=forum");
+        }
+        exit();
+    } else {
+        echo 'Mot de passe erronné';
     }
 
+}
 
 
-    require_once 'view/login.php';
+
+require_once 'view/login.php';
