@@ -52,8 +52,6 @@ function login($email, $password)
     return false;
 }
 
-
-
 function calculerAge($dateNaissance)
 {
     $dateNaissance = new DateTime($dateNaissance);
