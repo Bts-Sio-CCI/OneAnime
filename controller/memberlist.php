@@ -4,27 +4,53 @@ require_once 'model/DB.php';
 require_once 'model/User.php';
 require_once 'model/Category.php';
 
+$cnx = connect_bd('utilisateur');
+
 if ((isset($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
     $categories = listCategories();
+    if ($cnx) {
+        if (isset($_REQUEST['delete'])) {
+            echo "dans delete";
+            $idUtilisateur = isset($_REQUEST['cle']) ? $_REQUEST['cle'] : null;
+            if ($idUtilisateur !== null) {
+                $result = $cnx->prepare("DELETE FROM utilisateur WHERE idUtilisateur = :cle");
+                $result->bindParam(':cle', $idUtilisateur, PDO::PARAM_INT);
+                $result->execute();
+            } else {
+                echo "Erreur: idUtilisateur non spécifié.";
+            }
+        } elseif (isset($_REQUEST['update'])) {
+            echo "dans update";
+            $idUtilisateur = isset($_REQUEST['cle']) ? $_REQUEST['cle'] : null;
+            if ($idUtilisateur !== null) {
+                $nom = htmlspecialchars($_REQUEST['nom']);
+                $prenom = htmlspecialchars($_REQUEST['prenom']);
+                $email = htmlspecialchars($_REQUEST['email']);
+                $dateNaissance = htmlspecialchars($_REQUEST['dateNaissance']);
+                $adresse = htmlspecialchars($_REQUEST['adresse']);
+                $login = htmlspecialchars($_REQUEST['nomUtilisateur']);
 
-    if (isset($_POST['categ-select'])) {
+                $result = $cnx->prepare("UPDATE utilisateur SET nom=:nom, prenom=:prenom, email=:email, dateNaissance=:dateNaissance, adresse=:adresse, nomUtilisateur=:nomUtilisateur WHERE idUtilisateur=:cle");
+                $result->bindParam(':cle', $idUtilisateur, PDO::PARAM_INT);
+                $result->bindParam(':nom', $nom, PDO::PARAM_STR);
+                $result->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+                $result->bindParam(':email', $email, PDO::PARAM_STR);
+                $result->bindParam(':dateNaissance', $dateNaissance, PDO::PARAM_STR);
+                $result->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+                $result->bindParam(':nomUtilisateur', $login, PDO::PARAM_STR);
 
-        $users = getUsersByCategories($_POST['categ-select']);
-    } else {
-        $users = getUsers();
+                $result->execute();
+            } else {
+                echo "Erreur: idUtilisateur non spécifié.";
+            }
+        }
     }
-
 
 } else {
 
     header("Location: index.php?page=accueil ");
 
 }
-
-
-
-
-
 
 
 

@@ -1,9 +1,9 @@
 <?php
 function listCategories()
 {
-    global $pdo;
+    $cnx = connect_bd('utilisateur');
 
-    $stmt = $pdo->prepare("SELECT * FROM catégorie");
+    $stmt = $cnx->prepare("SELECT * FROM catégorie");
     $stmt->execute();
     $cats = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

@@ -1,73 +1,67 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+require_once('model/User.php'); // PROBLEME ICI
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OneAnime</title>
-    <link rel="stylesheet" type="text/css" href="assets/CSS/Accueil/style.css" />
-    <link rel="stylesheet" type="text/css" href="assets/CSS/Forum/styles.css" />
-    <link rel="icon" type="images/x-icon" href="/assets/img/logo.png" />
-</head>
+// Établissement de la connexion
 
-<body>
-    <?php require_once 'view/components/navbar.html' ?>
-    <form class="form-categ" action="" method="post">
-        <h2 class="text-center">Recherchez un membre par catégorie</h2>
-        <select name="categ-select" id="categ-select">
-            <option value="">Aucune catégorie</option>
-            <?php foreach ($categories as $categorie) { ?>
-                <option value="<?php echo $categorie["idCateg"] ?>">
-                    <?php echo $categorie["nomCateg"] ?>
-                </option>
-            <?php } ?>
-        </select>
-        <input type="submit" value="Envoyez">
-    </form>
-    <table>
-        <tr>
-            <th>ID utilisateur</th>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Date de naissance</th>
-            <th>Adresse mail</th>
-            <th>Nom utilisateur</th>
-            <th>Adresse</th>
-            <th>Code postal</th>
-            <th>ID catégorie</th>
-        </tr>
-        <tr>
-            <?php foreach ($users as $user) { ?>
-                <td>
-                    <?php echo $user['idUtilisateur'] ?>
-                </td>
-                <td>
-                    <?php echo $user['nom'] ?>
-                </td>
-                <td>
-                    <?php echo $user['prenom'] ?>
-                </td>
-                <td>
-                    <?php echo $user['dateNaissance'] ?>
-                </td>
-                <td>
-                    <?php echo $user['email'] ?>
-                </td>
-                <td>
-                    <?php echo $user['nomUtilisateur'] ?>
-                </td>
-                <td>
-                    <?php echo $user['adresse'] ?>
-                </td>
-                <td>
-                    <?php echo $user['CP'] ?>
-                </td>
-                <td>
-                    <?php echo $user['idCateg'] ?>
-                </td>
-            <?php } ?>
-        </tr>
-    </table>
-</body>
+if ((isset($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
 
-</html>
+    // Affichage du formulaire d'inscription
+    echo '<form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">';
+    echo '<h2>Listage des utilisateur</h2>';
+    echo '<label for="nom">Nom :</label>';
+    echo '<input type="text" name="nom" required><br>';
+    echo '<label for="prenom">Prénom :</label>';
+    echo '<input type="text" name="prenom" required><br>';
+    echo '<label for="email">Email :</label>';
+    echo '<input type="email" name="email" required><br>';
+    echo '<label for="dateNaissance">Date de Naissance :</label>';
+    echo '<input type="date" name="dateNaissance" required><br>';
+
+    echo '</select><br>';
+    echo '<label for="adresse">Adresse :</label>';
+    echo '<input type="text" name="adresse" required><br>';
+    echo '<label for="nomUtilisateur">Login :</label>';
+    echo '<input type="text" name="nomUtilisateur" required><br>';
+    echo '<input type="submit" name="inscription" value="Inscription">';
+    echo '</form>';
+
+    // Affichage des résultats
+    $query = 'SELECT * FROM utilisateur WHERE 1';
+
+    $result->execute();
+
+    if ($result->rowCount() > 0) {
+        echo "<table border='1'>";
+        echo "<tr>";
+        echo "<th>idUtilisateur</th>";
+        echo "<th>Nom</th>";
+        echo "<th>Prenom</th>";
+        echo "<th>email</th>";
+        echo "<th>dateNaissance</th>";
+        echo "<th>Adresse</th>";
+        echo "<th>Pseudo</th>";
+        echo "<th>Modifier</th>";
+        echo "<th>Supprimer</th>";
+        echo "</tr>";
+
+        while ($donnees = $result->fetch()) {
+            echo "<form action=" . $_SERVER['PHP_SELF'] . " method='post'>";
+            echo "<input type='hidden' name='cle' value='" . $donnees['idUtilisateur'] . "'>";
+            echo "<tr>";
+            echo "<td>" . $donnees['idUtilisateur'] . "</td>";
+            echo "<td><input type='text' name='nom'size='20' value='" . $donnees['nom'] . "'></td>";
+            echo "<td><input type='text' name='prenom'size='20' value='" . $donnees['prenom'] . "'></td>";
+            echo "<td><input type='text' name='email'size='20' value='" . $donnees['email'] . "'></td>";
+            echo "<td><input type='text' name='dateNaissance'size='20' value='" . $donnees['dateNaissance'] . "'></td>";
+            echo "<td><input type='text' name='adresse'size='20' value='" . $donnees['adresse'] . "'></td>";
+            echo "<td><input type='text' name='nomUtilisateur'size='20' value='" . $donnees['nomUtilisateur'] . "'></td>";
+            echo "<td><input type='submit' name='update' value='Modifier'></td>";
+            echo "<td><input type='submit' name='delete' value='Supprimer'></td>";
+            echo "</tr>";
+            echo "</form>";
+        }
+        echo "</table>";
+    } else {
+        echo "Aucun enregistrement, désolé";
+    }
+}

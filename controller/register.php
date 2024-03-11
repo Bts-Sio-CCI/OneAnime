@@ -4,7 +4,7 @@
 require_once 'model/DB.php';
 require_once 'model/User.php';
 
-var_dump(getCategorieId(15));
+//var_dump(getCategorieId(15));
 
 if (
     isset($_POST['nom']) &&

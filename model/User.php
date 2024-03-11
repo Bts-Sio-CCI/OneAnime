@@ -1,103 +1,127 @@
 <?php
-
-function register($nom, $prenom, $pseudo, $email, $dateNaissance, $adresse, $cp, $password)
-{
-    global $pdo;
-
-    $prenom = htmlspecialchars($prenom);
-    $nom = htmlspecialchars($nom);
-    $pseudo = htmlspecialchars($pseudo);
-    $password = password_hash($password, PASSWORD_DEFAULT);
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    $adresse = htmlspecialchars($adresse);
-    $cp = filter_var($cp, FILTER_SANITIZE_NUMBER_INT);
-    $idCateg = getCategorieId(calculerAge($dateNaissance));
+require_once('DB.php');
 
 
-    $stmt = $pdo->prepare("INSERT INTO utilisateur (nom, prenom, nomUtilisateur,email,dateNaissance,adresse,CP,motDePasse, idCateg)
-    VALUES(:nom,:prenom, :pseudo, :email, :dateNaissance, :adresse, :cp, :password, :idCateg)");
 
-    $stmt->execute([
-        'nom' => $nom,
-        'prenom' => $prenom,
-        'pseudo' => $pseudo,
-        'email' => $email,
-        'dateNaissance' => $dateNaissance,
-        'adresse' => $adresse,
-        'cp' => $cp,
-        'password' => $password,
-        'idCateg' => $idCateg,
-    ]);
+// Établissement de la connexion
+try {
 
-}
+    function register($nom, $prenom, $pseudo, $email, $dateNaissance, $adresse, $cp, $password)
+    {
+        $cnx = connect_bd('utilisateur');
 
-function login($email, $password)
-{
-    global $pdo;
+        $prenom = htmlspecialchars($prenom);
+        $nom = htmlspecialchars($nom);
+        $pseudo = htmlspecialchars($pseudo);
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+        $adresse = htmlspecialchars($adresse);
+        $cp = filter_var($cp, FILTER_SANITIZE_NUMBER_INT);
+        $idCateg = getCategorieId(calculerAge($dateNaissance));
 
-    $stmt = $pdo->prepare("SELECT email, motDePasse, idUtilisateur 
-    FROM utilisateur WHERE email = :email");
 
-    $stmt->execute(['email' => $email]);
-    $user = $stmt->fetch();
+        $stmt = $cnx->prepare("INSERT INTO utilisateur (nom, prenom, nomUtilisateur,email,dateNaissance,adresse,CP,motDePasse, idCateg)
+        VALUES(:nom,:prenom, :pseudo, :email, :dateNaissance, :adresse, :cp, :password, :idCateg)");
 
-    if ($user) {
-        $passVerif = password_verify($password, $user['motDePasse']);
-        if ($passVerif) {
-            $_SESSION['userID'] = $user['idUtilisateur'];
+        $stmt->execute([
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'pseudo' => $pseudo,
+            'email' => $email,
+            'dateNaissance' => $dateNaissance,
+            'adresse' => $adresse,
+            'cp' => $cp,
+            'password' => $password,
+            'idCateg' => $idCateg,
+        ]);
 
-            return true;
+    }
+
+    function login($email, $password)
+    {
+        $cnx = connect_bd('utilisateur');
+
+        $stmt = $cnx->prepare("SELECT email, motDePasse, idUtilisateur 
+        FROM utilisateur WHERE email = :email");
+
+        $stmt->execute(['email' => $email]);
+        $user = $stmt->fetch();
+
+        if ($user) {
+            $passVerif = password_verify($password, $user['motDePasse']);
+            if ($passVerif) {
+                $_SESSION['userID'] = $user['idUtilisateur'];
+
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function calculerAge($dateNaissance)
+    {
+        $dateNaissance = new DateTime($dateNaissance);
+        $dateActuelle = new DateTime();
+
+        $difference = $dateActuelle->diff($dateNaissance);
+
+        $age = $difference->y;
+
+        return $age;
+    }
+
+    function getCategorieId($age)
+    {
+        // SELECT idCateg 
+        // FROM catégorie
+        // WHERE ageMini <  19
+        // AND ageMaxi >=  19
+        $cnx = connect_bd('utilisateur');
+
+        $stmt = $cnx->prepare("SELECT idCateg FROM catégorie WHERE ageMini<=:age AND ageMaxi >= :age");
+        $stmt->execute(['age' => $age]);
+        $categorie = $stmt->fetch();
+
+        return $categorie["idCateg"];
+    }
+
+    function getUsersByCategories($idCategorie)
+    {
+        $cnx = connect_bd('utilisateur');
+
+        $stmt = $cnx->prepare("SELECT * FROM utilisateur WHERE idCateg = :idCat");
+        $stmt->execute(['idCat' => $idCategorie]);
+        $users = $stmt->fetchAll();
+
+        return $users;
+
+
+        // Traitement de l'inscription
+        // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['inscription'])) {
+        //     $nom = htmlspecialchars($_POST['nom']);
+        //     $prenom = htmlspecialchars($_POST['prenom']);
+        //     $email = htmlspecialchars($_POST['email']);
+        //     $dateNaissance = htmlspecialchars($_POST['dateNaissance']);
+        //     $adresse = htmlspecialchars($_POST['adresse']);
+        //     $login = htmlspecialchars($_POST['nomUtilisateur']);
+
+        if ($cnx) {
+            $result = $cnx->prepare("INSERT INTO utilisateur (nom, prenom, email, dateNaissance, adresse, nomUtilisateur) VALUES (:nom, :prenom, :email, :dateNaissance, :adresse, :nomUtilisateur)");
+            $result->bindParam(':nom', $nom, PDO::PARAM_STR);
+            $result->bindParam(':prenom', $prenom, PDO::PARAM_STR);
+            $result->bindParam(':email', $email, PDO::PARAM_STR);
+            $result->bindParam(':dateNaissance', $dateNaissance, PDO::PARAM_STR);
+            $result->bindParam(':adresse', $adresse, PDO::PARAM_STR);
+            $result->bindParam(':nomUtilisateur', $login, PDO::PARAM_STR);
+            $result->execute();
+
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit();
+        } else {
+            echo "Erreur de connexion à la base de données.";
         }
     }
-    return false;
-}
-
-function calculerAge($dateNaissance)
-{
-    $dateNaissance = new DateTime($dateNaissance);
-    $dateActuelle = new DateTime();
-
-    $difference = $dateActuelle->diff($dateNaissance);
-
-    $age = $difference->y;
-
-    return $age;
-}
-
-function getCategorieId($age)
-{
-    // SELECT idCateg 
-    // FROM catégorie
-    // WHERE ageMini <  19
-    // AND ageMaxi >=  19
-    global $pdo;
-
-    $stmt = $pdo->prepare("SELECT idCateg FROM catégorie WHERE ageMini<=:age AND ageMaxi >= :age");
-    $stmt->execute(['age' => $age]);
-    $categorie = $stmt->fetch();
-
-    return $categorie["idCateg"];
-}
-
-function getUsersByCategories($idCategorie)
-{
-    global $pdo;
-
-    $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE idCateg = :idCat");
-    $stmt->execute(['idCat' => $idCategorie]);
-    $users = $stmt->fetchAll();
-
-    return $users;
-}
-
-
-function getUsers()
-{
-    global $pdo;
-
-    $stmt = $pdo->prepare("SELECT * FROM utilisateur");
-    $stmt->execute();
-    $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    return $users;
+    deconnect_bd('utilisateur');
+} catch (PDOException $e) {
+    echo "Erreur de connexion à la base de données : " . $e->getMessage();
 }
