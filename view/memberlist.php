@@ -6,7 +6,7 @@ require_once ('model/User.php');
 if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
 
     $query = 'SELECT * FROM utilisateur';
-    echo "LISTE DES UTILISATEURS";
+    echo "LISTE DES UTILISATEURS :";
     $result = $cnx->query($query);
     //var_dump($result);
     if ($result->rowCount() > 0) {

@@ -7,14 +7,14 @@ require_once 'model/Category.php';
 $cnx = connect_bd('onemanga');
 
 if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
-    echo "SESSION OK" . $_SESSION['userID'] . "<br>";
+    //echo "SESSION OK" . $_SESSION['userID'] . "<br>";
 
     //$categories = listCategories();
     if ($cnx) {
-        echo "dans cnx";
+        //echo "dans cnx";
         //var_dump($_REQUEST);
         if (isset ($_REQUEST['delete'])) {
-            echo "dans delete";
+            //echo "dans delete";
             $idUtilisateur = isset ($_REQUEST['cle']) ? $_REQUEST['cle'] : null;
 
             if ($idUtilisateur !== null) {
@@ -27,7 +27,7 @@ if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
             }
         } elseif (isset ($_REQUEST['update'])) {
             
-            echo "dans update";
+            //echo "dans update";
             $idUtilisateur = isset ($_REQUEST['cle']) ? $_REQUEST['cle'] : null;
             if ($idUtilisateur !== null) {
                 $nom = htmlspecialchars($_REQUEST['nom']);
