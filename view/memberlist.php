@@ -1,12 +1,12 @@
 <?php
-require_once ('model/User.php'); // PROBLEME ICI
+require_once ('model/User.php');
 
 // Établissement de la connexion
 
 if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
 
     $query = 'SELECT * FROM utilisateur';
-
+    echo "LISTE DES UTILISATEURS";
     $result = $cnx->query($query);
     //var_dump($result);
     if ($result->rowCount() > 0) {
@@ -24,7 +24,7 @@ if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
         echo "</tr>";
 
         while ($donnees = $result->fetch()) {
-            echo "<form action=" . $_SERVER['PHP_SELF'] . " method='post'>";
+            echo "<form action='#' method='post'>";
             echo "<input type='hidden' name='cle' value='" . $donnees['idUtilisateur'] . "'>";
             echo "<tr>";
             echo "<td>" . $donnees['idUtilisateur'] . "</td>";

@@ -1,5 +1,7 @@
 <?php
-require_once('DB.php');
+
+
+require_once ('DB.php');
 
 
 
@@ -8,7 +10,7 @@ try {
 
     function register($nom, $prenom, $pseudo, $email, $dateNaissance, $adresse, $cp, $password)
     {
-        $cnx = connect_bd('utilisateur');
+        $cnx = connect_bd('onemanga');
 
         $prenom = htmlspecialchars($prenom);
         $nom = htmlspecialchars($nom);
@@ -39,7 +41,7 @@ try {
 
     function login($email, $password)
     {
-        $cnx = connect_bd('utilisateur');
+        $cnx = connect_bd('onemanga');
 
         $stmt = $cnx->prepare("SELECT email, motDePasse, idUtilisateur 
         FROM utilisateur WHERE email = :email");
@@ -76,7 +78,7 @@ try {
         // FROM catégorie
         // WHERE ageMini <  19
         // AND ageMaxi >=  19
-        $cnx = connect_bd('utilisateur');
+        $cnx = connect_bd('onemanga');
 
         $stmt = $cnx->prepare("SELECT idCateg FROM catégorie WHERE ageMini<=:age AND ageMaxi >= :age");
         $stmt->execute(['age' => $age]);
@@ -87,7 +89,7 @@ try {
 
     function getUsersByCategories($idCategorie)
     {
-        $cnx = connect_bd('utilisateur');
+        $cnx = connect_bd('onemanga');
 
         $stmt = $cnx->prepare("SELECT * FROM utilisateur WHERE idCateg = :idCat");
         $stmt->execute(['idCat' => $idCategorie]);
@@ -121,7 +123,7 @@ try {
             echo "Erreur de connexion à la base de données.";
         }
     }
-    deconnect_bd('utilisateur');
+    deconnect_bd('onemanga');
 } catch (PDOException $e) {
     echo "Erreur de connexion à la base de données : " . $e->getMessage();
 }

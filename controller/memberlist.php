@@ -1,5 +1,5 @@
 <?php
-
+//var_dump(($_SESSION['userID']));
 require_once 'model/DB.php';
 require_once 'model/User.php';
 require_once 'model/Category.php';
@@ -7,12 +7,16 @@ require_once 'model/Category.php';
 $cnx = connect_bd('onemanga');
 
 if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
-    $categories = listCategories();
+    echo "SESSION OK" . $_SESSION['userID'] . "<br>";
+
+    //$categories = listCategories();
     if ($cnx) {
+        echo "dans cnx";
+        //var_dump($_REQUEST);
         if (isset ($_REQUEST['delete'])) {
             echo "dans delete";
             $idUtilisateur = isset ($_REQUEST['cle']) ? $_REQUEST['cle'] : null;
-            
+
             if ($idUtilisateur !== null) {
                 $result = $cnx->prepare("DELETE FROM utilisateur WHERE idUtilisateur = :cle");
                 $result->bindParam(':cle', $idUtilisateur, PDO::PARAM_INT);
@@ -22,6 +26,7 @@ if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
                 echo "Erreur: idUtilisateur non spécifié.";
             }
         } elseif (isset ($_REQUEST['update'])) {
+            
             echo "dans update";
             $idUtilisateur = isset ($_REQUEST['cle']) ? $_REQUEST['cle'] : null;
             if ($idUtilisateur !== null) {
@@ -42,18 +47,21 @@ if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
                 $result->bindParam(':nomUtilisateur', $login, PDO::PARAM_STR);
 
                 $result->execute();
+                // var_dump($result);
             } else {
                 echo "Erreur: idUtilisateur non spécifié.";
             }
         }
+        include 'view/memberlist.php';
     }
+
+
 
 } else {
 
-    header("Location: index.php?page=accueil ");
+    header("Location:../index.php?page=accueil ");
 
 }
 
 
 
-require_once 'view/memberlist.php';

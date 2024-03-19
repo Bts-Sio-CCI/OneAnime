@@ -1,12 +1,12 @@
 <?php
 
-if (!isset($_SESSION['userID'])) {
+if (!isset ($_SESSION['userID'])) {
     header("Location: index.php?page=login");
     exit();
 }
 
 if (
-    isset($_POST['disconnect']) &&
+    isset ($_POST['disconnect']) &&
     $_POST['disconnect'] == 1
 ) {
     session_unset();
