@@ -7,14 +7,18 @@ require_once 'model/Category.php';
 $cnx = connect_bd('onemanga');
 
 if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
-    //echo "SESSION OK" . $_SESSION['userID'] . "<br>";
 
-    //$categories = listCategories();
+    $categories = listCategories();
+    if (isset ($_POST['categ-select'])) {
+
+        $users = getUsersByCategories($_POST['categ-select']);
+    } else {
+        $users = getUsers();
+    }
+
     if ($cnx) {
-        //echo "dans cnx";
         //var_dump($_REQUEST);
         if (isset ($_REQUEST['delete'])) {
-            //echo "dans delete";
             $idUtilisateur = isset ($_REQUEST['cle']) ? $_REQUEST['cle'] : null;
 
             if ($idUtilisateur !== null) {
@@ -26,8 +30,7 @@ if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
                 echo "Erreur: idUtilisateur non spécifié.";
             }
         } elseif (isset ($_REQUEST['update'])) {
-            
-            //echo "dans update";
+
             $idUtilisateur = isset ($_REQUEST['cle']) ? $_REQUEST['cle'] : null;
             if ($idUtilisateur !== null) {
                 $nom = htmlspecialchars($_REQUEST['nom']);

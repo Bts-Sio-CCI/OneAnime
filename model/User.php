@@ -97,16 +97,6 @@ try {
 
         return $users;
 
-
-        // Traitement de l'inscription
-        // if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['inscription'])) {
-        //     $nom = htmlspecialchars($_POST['nom']);
-        //     $prenom = htmlspecialchars($_POST['prenom']);
-        //     $email = htmlspecialchars($_POST['email']);
-        //     $dateNaissance = htmlspecialchars($_POST['dateNaissance']);
-        //     $adresse = htmlspecialchars($_POST['adresse']);
-        //     $login = htmlspecialchars($_POST['nomUtilisateur']);
-
         if ($cnx) {
             $result = $cnx->prepare("INSERT INTO utilisateur (nom, prenom, email, dateNaissance, adresse, nomUtilisateur) VALUES (:nom, :prenom, :email, :dateNaissance, :adresse, :nomUtilisateur)");
             $result->bindParam(':nom', $nom, PDO::PARAM_STR);
