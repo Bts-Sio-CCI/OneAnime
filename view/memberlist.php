@@ -8,7 +8,7 @@ if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
     $query = 'SELECT * FROM utilisateur';
     $query_moy = 'SELECT AVG(YEAR(CURRENT_DATE) - YEAR(dateNaissance)) FROM utilisateur';
     $query_nb_user = 'SELECT COUNT(*) FROM utilisateur';
-    echo "LISTE DES UTILISATEURS";
+    echo "LISTE DES UTILISATEURS :";
     $result = $cnx->query($query);
     $moyenne = $cnx->query($query_moy);
     $nb_user = $cnx->query($query_nb_user);
