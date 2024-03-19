@@ -5,6 +5,8 @@ require_once ('model/User.php');
 
 if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
 
+    require_once ('components/categorie_age.html');
+
     $query = 'SELECT * FROM utilisateur';
     echo "LISTE DES UTILISATEURS";
     $result = $cnx->query($query);
