@@ -8,14 +8,6 @@ $cnx = connect_bd('onemanga');
 
 if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
 
-    $categories = listCategories();
-    if (isset ($_POST['categ-select'])) {
-
-        $users = getUsersByCategories($_POST['categ-select']);
-    } else {
-        $users = getUsers();
-    }
-
     if ($cnx) {
         //var_dump($_REQUEST);
         if (isset ($_REQUEST['delete'])) {

@@ -5,11 +5,13 @@ require_once ('model/User.php');
 
 if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
 
-    require_once ('components/categorie_age.html');
-
     $query = 'SELECT * FROM utilisateur';
+    $query_moy = 'SELECT AVG(YEAR(CURRENT_DATE) - YEAR(dateNaissance)) FROM utilisateur';
+    $query_nb_user = 'SELECT COUNT(*) FROM utilisateur';
     echo "LISTE DES UTILISATEURS";
     $result = $cnx->query($query);
+    $moyenne = $cnx->query($query_moy);
+    $nb_user = $cnx->query($query_nb_user);
     //var_dump($result);
     if ($result->rowCount() > 0) {
         echo "<table border='1'>";
@@ -42,6 +44,12 @@ if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
             echo "</form>";
         }
         echo "</table>";
+        $moyenne = $moyenne->fetchColumn();
+        $nb_utilisateur = $nb_user->fetchColumn();
+        $moyenne_ages = round($moyenne);
+
+        echo "Nombre d'utilisateurs : " . $nb_utilisateur;
+        echo "<br>La moyenne d'âge est : " . $moyenne_ages;
     } else {
         echo "Aucun enregistrement, désolé";
     }

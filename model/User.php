@@ -72,6 +72,14 @@ try {
         return $age;
     }
 
+    function calculerMoy()
+    {
+        $cnx = connect_bd('onemanga');
+        $moy = $cnx->prepare("SELECT AVG(age) FROM utilisateur");
+        $moy->execute();
+        return $moy;
+    }
+
     function getCategorieId($age)
     {
         // SELECT idCateg 
