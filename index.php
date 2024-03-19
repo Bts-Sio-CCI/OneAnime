@@ -62,7 +62,7 @@ if (isset($_GET['page'])) {
 
         // index.php?page=memberlist
         case 'memberlist':
-            require_once 'controller/memberlist.php';
+            include 'controller/memberlist.php';
             break;
 
     }

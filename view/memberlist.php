@@ -1,35 +1,14 @@
 <?php
-require_once('model/User.php'); // PROBLEME ICI
+require_once ('model/User.php'); // PROBLEME ICI
 
 // Établissement de la connexion
 
-if ((isset($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
+if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
 
-    // Affichage du formulaire d'inscription
-    echo '<form method="post" action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '">';
-    echo '<h2>Listage des utilisateur</h2>';
-    echo '<label for="nom">Nom :</label>';
-    echo '<input type="text" name="nom" required><br>';
-    echo '<label for="prenom">Prénom :</label>';
-    echo '<input type="text" name="prenom" required><br>';
-    echo '<label for="email">Email :</label>';
-    echo '<input type="email" name="email" required><br>';
-    echo '<label for="dateNaissance">Date de Naissance :</label>';
-    echo '<input type="date" name="dateNaissance" required><br>';
+    $query = 'SELECT * FROM utilisateur';
 
-    echo '</select><br>';
-    echo '<label for="adresse">Adresse :</label>';
-    echo '<input type="text" name="adresse" required><br>';
-    echo '<label for="nomUtilisateur">Login :</label>';
-    echo '<input type="text" name="nomUtilisateur" required><br>';
-    echo '<input type="submit" name="inscription" value="Inscription">';
-    echo '</form>';
-
-    // Affichage des résultats
-    $query = 'SELECT * FROM utilisateur WHERE 1';
-
-    $result->execute();
-
+    $result = $cnx->query($query);
+    //var_dump($result);
     if ($result->rowCount() > 0) {
         echo "<table border='1'>";
         echo "<tr>";
