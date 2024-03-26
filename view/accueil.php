@@ -27,8 +27,8 @@
         </div>
     </section>
 
-    <script src="assets/JS/calendar.js"></script>
-    <script src="assets/JS/main.js"></script>
+    <script src="old/JS/calendar.js"></script>
+    <script src="old/JS/main.js"></script>
 </body>
 
 </html>
