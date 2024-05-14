@@ -53,4 +53,36 @@ if ((isset ($_SESSION['userID']) && ($_SESSION['userID'] == 1))) {
     } else {
         echo "Aucun enregistrement, désolé";
     }
+} else {
+    $query = 'SELECT * FROM evènement_ & utilisateur';
+
+    if ($result->rowCount() > 0) {
+        echo "<table border='1'>";
+        echo "<tr>";
+        echo "<th>idUtilisateur</th>";
+        echo "<th>Pseudo</th>";
+        
+        echo "<th>idEvent</th>";
+        echo "<th>dateDebutEvent</th>";
+        echo "<th>dateFinEvent</th>";
+        echo "<th>description</th>";
+        echo "</tr>";
+
+        while ($donnees = $result->fetch()) {
+            echo "<form action='#' method='post'>";
+            echo "<input type='hidden' name='cle' value='" . $donnees['idUtilisateur'] . "'>";
+            echo "<input type='hidden' name='cle' value='" . $donnees['idEvent'] . "'>";
+            echo "<tr>";
+            echo "<td>" . $donnees['idUtilisateur'] . "</td>";
+            echo "<td><input type='text' name='nomUtilisateur'size='20' value='" . $donnees['nomUtilisateur'] . "'></td>";
+            echo "<td>" . $donnees['idEvent'] . "</td>";
+            echo "<td><input type='text' name='dateDebut'size='20' value='" . $donnees['dateDebutEvent'] . "'></td>"; 
+            echo "<td><input type='text' name='dateFin'size='20' value='" . $donnees['dateFinEvent'] . "'></td>";
+            echo "<td><input type='text' name='description'size='20' value='" . $donnees['description'] . "'></td>";
+            echo "</tr>";
+            echo "</form>";
+        }
+    } else {
+        echo "Aucun évènnement, désolé";
+    }
 }
