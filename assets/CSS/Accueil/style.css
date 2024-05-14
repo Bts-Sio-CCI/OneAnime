@@ -3,9 +3,6 @@
 
 @import url(/CSS/Accueil/calendar.css);
 
-
-    
-
 * {
     margin: 0;
     padding: 0;
@@ -39,7 +36,7 @@ main.spar {
     height: 100%;
     transition: 0.3s;
     background: #272525;
-    padding-top : 1vh;
+    padding-top: 1vh;
     left: 0;
     right: 1vw;
     width: 85px;
@@ -149,91 +146,90 @@ li span:nth-child(2) {
     border-radius: 0.8em;
 }
 
-.shop-title{
-  text-align: center;
-  background-color: gray;
+.shop-title {
+    text-align: center;
+    background-color: gray;
 }
 
-.panier{
+.panier {
     margin-left: 10vw;
 }
 
 .cart-item {
     margin-right: 10vw;
-    padding: 10px; 
-    border-radius: 8px; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .delete-button {
-    background-color: #ff3333; 
-    color: #ffffff; 
-    padding: 8px 12px; 
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
+    background-color: #ff3333;
+    color: #ffffff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-
-#font-title{
+#font-title {
     font-size: 300%;
     padding-left: 40%;
 }
 
-#font-small{
+#font-small {
     font-size: 100%;
 }
 
-.section-accueil{
+.section-accueil {
     background: #383838;
     height: 100%;
     padding-bottom: 2%;
 }
 
-.section-actu{
+.section-actu {
     background: #494949;
+    height: 100%;
     padding-top: 2%;
     padding-bottom: 5%;
 }
 
-#actus{
-    position: absolute;
+#actus {
+    position: relative;
     padding-left: 6%;
 }
 
 @media screen and (max-width: 1240px) {
-    .section-actu{
+    .section-actu {
         padding-bottom: 100%;
     }
 }
 
-
-@media screen and (max-width:1600px) {
-    .section-actu .titre{
+@media screen and (max-width: 1600px) {
+    .section-actu .titre {
         margin-left: 15%;
     }
 
-    .map-loc{
+    .map-loc {
         margin-left: 15%;
     }
 }
 
 @media screen and (max-width: 570px) {
-    .map-loc{
+    .map-loc {
         display: none;
     }
 
-    .section-accueil{
+    .section-accueil {
         height: 50%;
         padding-bottom: 10%;
     }
-    
-    .section-actu{
+
+    .section-actu {
         height: 50%;
         padding-bottom: 200%;
     }
 
-    .section-accueil .titre{
+    .section-accueil .titre {
         display: none;
     }
 
