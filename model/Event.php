@@ -8,9 +8,9 @@ class Reservation
 
     public function __construct($id, $manga, $user, $date)
     {
-        $this->id = $id;
+        $this->idutilisateur = $id;
         $this->manga = $manga;
-        $this->user = $user;
+        $this->utilisateur = $user;
         $this->date = $date;
     }
 
@@ -59,7 +59,7 @@ class Reservation
 
     public function toString()
     {
-        return "Reservation [id=" . $this->id . ", manga=" . $this->manga . ", user=" . $this->user . ", date=" . $this->date . "]";
+        return "IdReservation [id=" . $this->id . ", manga=" . $this->manga . ", utilisateur=" . $this->user . ", date=" . $this->date . "]";
     }
 }
 
@@ -67,14 +67,11 @@ class Reservation
 $reservation1 = new Reservation(1, "One Piece", "John", "2022-10-01");
 $reservation2 = new Reservation(2, "Naruto", "Alice", "2022-10-02");
 
-var_dump($reservation1);
-var_dump($reservation2);
-
 
 
 $reservations = array($reservation1, $reservation2);
 
-var_dump($reservations);
+
 
 
 
@@ -89,4 +86,4 @@ $reservations = array();
 
 $reservations = $reservationModel->getAllReservations();
 
-var_dump($reservations);
+

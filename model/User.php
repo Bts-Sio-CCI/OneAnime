@@ -1,11 +1,8 @@
 <?php
-
-
 require_once ('DB.php');
 
 
 
-// Établissement de la connexion
 try {
 
     function register($nom, $prenom, $pseudo, $email, $dateNaissance, $adresse, $cp, $password)
