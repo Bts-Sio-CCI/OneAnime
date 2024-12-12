@@ -1,56 +1,72 @@
 <?php
+session_start();
 
-/*
- *---------------------------------------------------------------
- * CHECK PHP VERSION
- *---------------------------------------------------------------
- */
+if (isset($_GET['page'])) {
+    switch ($_GET['page']) {
+        // index.php?page=accueil
+        case 'accueil':
+            require_once 'controller/accueil.php';
+            break;
+        // index.php?page=fantasy
+        case 'fantasy':
+            require_once 'controller/fantasy.php';
+            break;
 
-$minPhpVersion = '8.1'; // If you update this, don't forget to update `spark`.
-if (version_compare(PHP_VERSION, $minPhpVersion, '<')) {
-    $message = sprintf(
-        'Your PHP version must be %s or higher to run CodeIgniter. Current version: %s',
-        $minPhpVersion,
-        PHP_VERSION
-    );
+        // index.php?page=shop
+        case 'shop':
+            require_once 'controller/shop.php';
+            break;
 
-    header('HTTP/1.1 503 Service Unavailable.', true, 503);
-    echo $message;
+        // index.php?page=shonen
+        case 'shonen':
+            require_once 'controller/shonen.php';
+            break;
+        // index.php?page=shojo
+        case 'shojo':
+            require_once 'controller/shojo.php';
+            break;
+        // index.php?page=shojo
+        case 'seinen':
+            require_once 'controller/seinen.php';
+            break;
 
-    exit(1);
+        // index.php?page=forum
+        case 'forum':
+            require_once 'controller/forum.php';
+            break;
+
+        // index.php?page=isekai
+        case 'isekai':
+            require_once 'controller/isekai.php';
+            break;
+
+        // index.php?page=parametre
+        case 'parametre':
+            require_once 'controller/parametre.php';
+            break;
+
+        // index.php?page=register
+        case 'register':
+            require_once 'controller/register.php';
+            break;
+
+        // index.php?page=romance
+        case 'romance':
+            require_once 'controller/romance.php';
+            break;
+
+        // index.php?page=login
+        case 'login':
+            require_once 'controller/login.php';
+            break;
+
+        // index.php?page=memberlist
+        case 'memberlist':
+            include 'controller/memberlist.php';
+            break;
+
+    }
+
+} else {
+    header('Location: index.php?page=accueil');
 }
-
-/*
- *---------------------------------------------------------------
- * SET THE CURRENT DIRECTORY
- *---------------------------------------------------------------
- */
-
-// Path to the front controller (this file)
-define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
-
-// Ensure the current directory is pointing to the front controller's directory
-if (getcwd() . DIRECTORY_SEPARATOR !== FCPATH) {
-    chdir(FCPATH);
-}
-
-/*
- *---------------------------------------------------------------
- * BOOTSTRAP THE APPLICATION
- *---------------------------------------------------------------
- * This process sets up the path constants, loads and registers
- * our autoloader, along with Composer's, loads our constants
- * and fires up an environment-specific bootstrapping.
- */
-
-// LOAD OUR PATHS CONFIG FILE
-// This is the line that might need to be changed, depending on your folder structure.
-require FCPATH . '/app/Config/Paths.php';
-// ^^^ Change this line if you move your application folder
-
-$paths = new Config\Paths();
-
-// LOAD THE FRAMEWORK BOOTSTRAP FILE
-require $paths->systemDirectory . '/Boot.php';
-
-exit(CodeIgniter\Boot::bootWeb($paths));

@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
+
+@import url(/CSS/Accueil/calendar.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #c4c4c4;
+}
+
+.navbar {
+    position: fixed;
+    height: auto;
+    z-index: 1000;
+}
+
+main.spar {
+    flex-grow: 1;
+}
+
+#main-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 2;
+}
+
+.menu {
+    height: 100%;
+    transition: 0.3s;
+    background: #272525;
+    padding-top: 1vh;
+    left: 0;
+    right: 1vw;
+    width: 85px;
+    box-shadow: 8px 0px 9px 0px #594f4f;
+    backdrop-filter: blur(5px);
+    min-height: 100vh;
+}
+
+.menu-content li {
+    list-style: none;
+    border-radius: 0px 50px 50px 0;
+    transition: 0.3s;
+    margin-bottom: 20px;
+    padding-left: 15%;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(213, 213, 213);
+    display: flex;
+    align-items: center;
+    font-family: "calibri";
+}
+
+.material-symbols-outlined {
+    font-size: 25px;
+    border-radius: 50%;
+    padding: 10px;
+    border: 5px solid #0c0c0c;
+    background: #272525;
+    border-radius: 0.8em;
+    max-height: 58px;
+}
+
+li:hover {
+    background: #0c0c0c;
+}
+
+li span:nth-child(2) {
+    display: none;
+}
+
+.menu:hover {
+    width: 260px;
+}
+
+.menu:hover li span:nth-child(2) {
+    display: block;
+    text-indent: 1vw;
+    font-weight: bold;
+}
+
+.logo {
+    width: 1.5vw;
+    filter: grayscale(50%);
+    height: 3vh;
+}
+
+.titre {
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: "Nova Square", sans-serif;
+}
+
+.onglet-shop {
+    position: absolute;
+    bottom: 18vh;
+    left: 0;
+    right: 1vw;
+}
+
+.onglet-forum {
+    position: absolute;
+    bottom: 9vh;
+    left: 0;
+    right: 1vw;
+}
+
+.onglet-settings {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 1vw;
+}
+
+.grid-body-actu {
+    display: flex;
+    justify-content: center;
+}
+
+.Accueil-home {
+    padding-right: 15vw;
+    margin-top: 3vh;
+    margin-left: 10vw;
+}
+
+.event {
+    margin-top: 5vh;
+}
+
+.map-loc {
+    margin-top: 2vw;
+    margin-left: 10vw;
+    width: 40vw;
+    height: 40vh;
+    border: 15px solid #272525;
+    border-radius: 0.8em;
+}
+
+.shop-title {
+    text-align: center;
+    background-color: gray;
+}
+
+.panier {
+    margin-left: 10vw;
+}
+
+.cart-item {
+    margin-right: 10vw;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.delete-button {
+    background-color: #ff3333;
+    color: #ffffff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#font-title {
+    font-size: 300%;
+    padding-left: 40%;
+}
+
+#font-small {
+    font-size: 100%;
+}
+
+.section-accueil {
+    background: #383838;
+    height: 100%;
+    padding-bottom: 2%;
+}
+
+.section-actu {
+    background: #494949;
+    height: 100%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+#actus {
+    position: relative;
+    padding-left: 6%;
+}
+
+@media screen and (max-width: 1240px) {
+    .section-actu {
+        padding-bottom: 100%;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .section-actu .titre {
+        margin-left: 15%;
+    }
+
+    .map-loc {
+        margin-left: 15%;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .map-loc {
+        display: none;
+    }
+
+    .section-accueil {
+        height: 50%;
+        padding-bottom: 10%;
+    }
+
+    .section-actu {
+        height: 50%;
+        padding-bottom: 200%;
+    }
+
+    .section-accueil .titre {
+        display: none;
+    }
+
+    .section-actu .titre {
+        margin-left: 20%;
+    }
+}
