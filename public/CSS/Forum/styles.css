@@ -35,3 +35,22 @@
 .form-categ {
     margin-left: 30vw;
 }
+
+.register-form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px; /* Ajustez cette valeur selon vos besoins */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1; /* Assurez-vous que le formulaire est au-dessus de la navbar */
+}
+
+@media screen and (max-width: 768px) {
+    .register-form {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}

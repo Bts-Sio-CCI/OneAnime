@@ -14,25 +14,26 @@
 </head>
 
 <body>
-    <<?= view('components/navbar') ?>
+<?= view('components/navbar') ?>
     <div class="login-form">
-        <form action="" method="post">
+        <?php if (session()->getFlashdata('error')): ?>
+            <p class="text-danger"><?= session()->getFlashdata('error') ?></p>
+        <?php endif; ?>
+        <form action="<?= base_url('login/authenticate') ?>" method="post">
             <h2 class="text-center">Connexion</h2>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input id="email" type="email" name="email" class="form-control" placeholder="Adresse Mail"
-                    required="required" />
+                <input id="email" type="email" name="email" class="form-control" placeholder="Adresse Mail" required="required" />
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input id="password" type="password" name="pass" class="form-control" placeholder="Mot de passe"
-                    required="required" />
+                <input id="password" type="password" name="pass" class="form-control" placeholder="Mot de passe" required="required" />
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
             </div>
         </form>
-        <p class="text-center"><a href="?page=register">Pas encore de compte ?</a></p>
+        <p class="text-center"><a href="<?= base_url('register') ?>">Pas encore de compte ?</a></p>
     </div>
 </body>
 
