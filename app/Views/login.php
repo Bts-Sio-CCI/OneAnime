@@ -16,6 +16,7 @@
 <body>
 <?= view('components/navbar') ?>
     <div class="login-form">
+    <?php var_dump($_SESSION)?>
         <?php if (session()->getFlashdata('error')): ?>
             <p class="text-danger"><?= session()->getFlashdata('error') ?></p>
         <?php endif; ?>

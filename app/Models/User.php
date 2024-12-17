@@ -2,73 +2,88 @@
 
 namespace App\Models;
 
+use CodeIgniter\I18n\Time;
 use CodeIgniter\Model;
 
 class User extends Model
 {
+    protected $table = 'utilisateur';
+    protected $primaryKey = 'id';
+    protected $allowedFields = ['nom', 'prenom', 'email', 'dateNaissance', 'adresse', 'nomUtilisateur', 'motDePasse', 'idCateg'];
+
+
+    public function register($data)
+    {
+        $age = $this->calculerAge($data['dateNaissance']);
+        $idCateg = $this->getCategorieId($age);
+
+        $userData = [
+            'nom' => $data['nom'],
+            'prenom' => $data['prenom'],
+            'nomUtilisateur' => $data['pseudo'],
+            'email' => $data['email'],
+            'dateNaissance' => $data['dateNaissance'],
+            'adresse' => $data['adresse'],
+            'CP' => $data['cp'],
+            'motDePasse' => password_hash($data['pass'], PASSWORD_DEFAULT),
+            'idCateg' => $idCateg
+        ];
+
+        return $this->save($userData);
+    }
+
+    public function authenticate($email, $password)
+    {
+        $user = $this->where('email', $email)->first();
+
+        if ($user && isset($user['motDePasse']) && password_verify($password, $user['motDePasse'])) {
+            return $user;
+        }
+
+        return false;
+    }
+
     function calculerAge($dateNaissance)
     {
-        $dateNaissance = new DateTime($dateNaissance);
-        $dateActuelle = new DateTime();
+        $dateNaissance = new Time($dateNaissance);
+        $dateActuelle = new Time();
 
         $difference = $dateActuelle->diff($dateNaissance);
 
         $age = $difference->y;
-
+        var_dump($age);
         return $age;
     }
 
     function calculerMoy()
     {
-        $cnx = connect_bd('onemanga');
-        $moy = $cnx->prepare("SELECT AVG(age) FROM utilisateur");
-        $moy->execute();
-        return $moy;
+        $builder = $this->db->table($this->table);
+        $builder->selectAvg('age');
+        $query = $builder->get();
+        $result = $query->getRow();
+
+        return $result->age;
     }
 
     function getCategorieId($age)
     {
-        // SELECT idCateg 
-        // FROM catégorie
-        // WHERE ageMini <  19
-        // AND ageMaxi >=  19
-        $cnx = connect_bd('onemanga');
-
-        $stmt = $cnx->prepare("SELECT idCateg FROM catégorie WHERE ageMini<=:age AND ageMaxi >= :age");
-        $stmt->execute(['age' => $age]);
-        $categorie = $stmt->fetch();
-
-        return $categorie["idCateg"];
+        $builder = $this->db->table('catégorie');
+        $builder->select('idCateg');
+        $builder->where('ageMini <=', $age);
+        $builder->where('ageMaxi >=', $age);
+        $query = $builder->get();
+        $categorie = $query->getRow();
+        if($categorie == null){ return 0;}
+        return $categorie->idCateg;
     }
 
     function getUsersByCategories($idCategorie)
     {
-        $cnx = connect_bd('onemanga');
-
-        $stmt = $cnx->prepare("SELECT * FROM utilisateur WHERE idCateg = :idCat");
-        $stmt->execute(['idCat' => $idCategorie]);
-        $users = $stmt->fetchAll();
+        $builder = $this->db->table($this->table);
+        $builder->where('idCateg', $idCategorie);
+        $query = $builder->get();
+        $users = $query->getResult();
 
         return $users;
-
-        if ($cnx) {
-            $result = $cnx->prepare("INSERT INTO utilisateur (nom, prenom, email, dateNaissance, adresse, nomUtilisateur) VALUES (:nom, :prenom, :email, :dateNaissance, :adresse, :nomUtilisateur)");
-            $result->bindParam(':nom', $nom, PDO::PARAM_STR);
-            $result->bindParam(':prenom', $prenom, PDO::PARAM_STR);
-            $result->bindParam(':email', $email, PDO::PARAM_STR);
-            $result->bindParam(':dateNaissance', $dateNaissance, PDO::PARAM_STR);
-            $result->bindParam(':adresse', $adresse, PDO::PARAM_STR);
-            $result->bindParam(':nomUtilisateur', $login, PDO::PARAM_STR);
-            $result->execute();
-
-            header("Location: " . $_SERVER['PHP_SELF']);
-            exit();
-        } else {
-            echo "Erreur de connexion à la base de données.";
-        }
     }
-    deconnect_bd('onemanga');
-} catch (PDOException $e) {
-    echo "Erreur de connexion à la base de données : " . $e->getMessage();
 }
-

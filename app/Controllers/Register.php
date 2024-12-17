@@ -35,21 +35,12 @@ class Register extends BaseController
         }
 
         $userModel = new User();
-        $age = $userModel->calculerAge($this->request->getPost('dateNaissance'));
-        $idCateg = $userModel->getCategorieId($age);
+        $userData = $this->request->getPost();
 
-        $userModel->save([
-            'nom' => $this->request->getPost('nom'),
-            'prenom' => $this->request->getPost('prenom'),
-            'nomUtilisateur' => $this->request->getPost('pseudo'),
-            'email' => $this->request->getPost('email'),
-            'dateNaissance' => $this->request->getPost('dateNaissance'),
-            'adresse' => $this->request->getPost('adresse'),
-            'cp' => $this->request->getPost('cp'),
-            'motDePasse' => password_hash($this->request->getPost('pass'), PASSWORD_DEFAULT),
-            'idCateg' => $idCateg
-        ]);
-
-        return redirect()->to('login');
+        if ($userModel->register($userData)) {
+            return redirect()->to('login');
+        } else {
+            return redirect()->back()->with('error', 'Registration failed');
+        }
     }
 }

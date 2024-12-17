@@ -9,9 +9,8 @@ class Forum extends BaseController
 {
     public function index()
     {
-        $session = session();
         
-        if (!isset ($session->get['userID'])) {
+        if (!isset ($_SESSION['userID'])) {
             return redirect('login');
         }
         

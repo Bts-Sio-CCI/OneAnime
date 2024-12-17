@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Accueil::index', ['as' => 'accueil']);
 $routes->get('/fantasy', 'Fantasy::index', ['as' => 'fantasy']);
 $routes->get('/forum', 'Forum::index', ['as' => 'forum']);
+$routes->post('/forum', 'Forum::index', ['as' => 'forum']);
 $routes->get('/isekai', 'Isekai::index', ['as' => 'isekai']);
 $routes->get('/login', 'Login::index', ['as' => 'login']);
 $routes->post('/login/authenticate', 'Login::authenticate', ['as' => 'login']);

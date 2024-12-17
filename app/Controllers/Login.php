@@ -19,11 +19,10 @@ class Login extends BaseController
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('pass');
 
-        // Assuming you have a method in User model to validate login
         $userModel = new User();
-        $user = $userModel->where('email', $email)->first();
+        $user = $userModel->authenticate($email, $password);
 
-        if ($user && isset($user['password']) && password_verify($password, $user['password'])) {
+        if ($user) {
             $session->set('userID', $user['idUtilisateur']);
             if ($user['idUtilisateur'] == 1) {
                 return redirect()->to('memberlist');
