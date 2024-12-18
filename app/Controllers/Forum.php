@@ -2,23 +2,20 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
-
 class Forum extends BaseController
 {
     public function index()
     {
-        
-        if (!isset ($_SESSION['userID'])) {
+        $session = session();
+        if ($session->get("userID") == null) {
             return redirect('login');
+
         }
         
         if (
-            isset ($_POST['disconnect']) &&
-            $_POST['disconnect'] == 1
+            $this->request->getPost('disconnect') == 1
         ) {
-            session_unset();
+            $session->destroy();
             return redirect('login');
         }
 
