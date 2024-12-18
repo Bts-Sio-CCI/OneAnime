@@ -22,7 +22,7 @@ class Login extends BaseController
 
         if ($user) {
             $session->set('userID', $user['idUtilisateur']);
-            if ($user['idUtilisateur'] == 1) {
+            if ($user['IsAdmin'] == 1) {
                 return redirect()->to('memberlist');
             } else {
                 return redirect()->to('forum');

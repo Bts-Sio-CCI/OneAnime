@@ -28,6 +28,7 @@ class Register extends BaseController
             'cp' => 'required',
             'pass' => 'required|min_length[6]',
             'pass-conf' => 'required|matches[pass]'
+
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {

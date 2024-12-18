@@ -2,21 +2,24 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
+use App\Models\User;
 
 class Memberlist extends BaseController
 {
     public function index()
     {
         $session = session();
-        if ($session->get('userID') && $session->get('userID') == 1) {
-            $utilisateurModel = new UtilisateurModel();
+        $userModel = new User();
+        $user = $userModel->getUsersById(7);
+//        récupérer les données de la session
+//        initialisation de l'instance user
+//        récupération du user en fonction de son id
 
+        if ($user && $user['IsAdmin'] == 1) {
             if ($this->request->getPost('delete')) {
                 $idUtilisateur = $this->request->getPost('cle');
                 if ($idUtilisateur !== null) {
-                    $utilisateurModel->deleteUtilisateur($idUtilisateur);
+                    $userModel->deleteUser($idUtilisateur);
                 } else {
                     echo "Erreur: idUtilisateur non spécifié.";
                 }
@@ -29,21 +32,21 @@ class Memberlist extends BaseController
                         'email' => htmlspecialchars($this->request->getPost('email')),
                         'dateNaissance' => htmlspecialchars($this->request->getPost('dateNaissance')),
                         'adresse' => htmlspecialchars($this->request->getPost('adresse')),
-                        'nomUtilisateur' => htmlspecialchars($this->request->getPost('nomUtilisateur'))
+                        'nomUtilisateur' => htmlspecialchars($this->request->getPost('nomUtilisateur')),
                     ];
-                    $utilisateurModel->updateUtilisateur($idUtilisateur, $data);
+                    $userModel->updateUser($idUtilisateur, $data);
                 } else {
                     echo "Erreur: idUtilisateur non spécifié.";
                 }
             }
 
-            $data['users'] = $utilisateurModel->getAllUsers();
-            $data['average_age'] = round($utilisateurModel->getAverageAge());
-            $data['user_count'] = $utilisateurModel->getUserCount();
+            $data['users'] = $userModel->getAllUsers();
+            $data['average_age'] = round($userModel->getAverageAge());
+            $data['user_count'] = $userModel->getUserCount();
 
             return view('memberlist', $data);
         } else {
-            return redirect()->to('accueil');
+            return redirect()->to('/');
         }
     }
 }

@@ -9,7 +9,6 @@ class Forum extends BaseController
         $session = session();
         if ($session->get("userID") == null) {
             return redirect('login');
-
         }
         
         if (

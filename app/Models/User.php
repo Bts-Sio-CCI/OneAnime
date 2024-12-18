@@ -8,8 +8,8 @@ use CodeIgniter\Model;
 class User extends Model
 {
     protected $table = 'utilisateur';
-    protected $primaryKey = 'id';
-    protected $allowedFields = ['nom', 'prenom', 'email', 'dateNaissance', 'adresse', 'nomUtilisateur', 'motDePasse', 'idCateg'];
+    protected $primaryKey = 'idUtilisateur';
+    protected $allowedFields = ['nom', 'prenom', 'email', 'dateNaissance', 'adresse', 'nomUtilisateur', 'motDePasse', 'idCateg', 'IsAdmin'];
 
 
     public function register($data)
@@ -26,7 +26,8 @@ class User extends Model
             'adresse' => $data['adresse'],
             'CP' => $data['cp'],
             'motDePasse' => password_hash($data['pass'], PASSWORD_DEFAULT),
-            'idCateg' => $idCateg
+            'idCateg' => $idCateg,
+            'IsAdmin' => 0
         ];
 
         return $this->save($userData);
@@ -51,18 +52,18 @@ class User extends Model
         $difference = $dateActuelle->diff($dateNaissance);
 
         $age = $difference->y;
-        var_dump($age);
         return $age;
     }
 
-    function calculerMoy()
+    function getAverageAge()
     {
-        $builder = $this->db->table($this->table);
-        $builder->selectAvg('age');
-        $query = $builder->get();
-        $result = $query->getRow();
+        $users = $this->getAllUsers();
+        $total = 0;
+        foreach ($users as $user) {
+            $total += $this->calculerAge($user['dateNaissance']);
+        }
 
-        return $result->age;
+        return $total / count($users);
     }
 
     function getCategorieId($age)
@@ -85,5 +86,35 @@ class User extends Model
         $users = $query->getResult();
 
         return $users;
+    }
+
+    function getUsersById($idUtilisateur)
+    {
+        $builder = $this->db->table($this->table);
+        $builder->where('idUtilisateur', $idUtilisateur);
+        $query = $builder->get();
+        $users = $query->getRowArray();
+
+        return $users;
+    }
+
+    public function getAllUsers()
+    {
+        return $this->findAll();
+    }
+
+    public function getUserCount()
+    {
+        return $this->countAllResults();
+    }
+
+    public function deleteUser($idUtilisateur)
+    {
+        return $this->delete($idUtilisateur);
+    }
+
+    public function updateUser($idUtilisateur, $data)
+    {
+        return $this->update($idUtilisateur, $data);
     }
 }
